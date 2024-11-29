@@ -1,0 +1,121 @@
+Claude Non-Determinism Experiment Summary
+=======================================
+
+Prompt: What are three key benefits of exercise? Format response as JSON with keys: benefit1, benefit2, benefit3
+Total responses: 20
+Unique responses: 13
+
+Field Analysis:
+
+benefit1:
+  Unique values: 4
+  Entropy: 0.708
+  Value frequencies:
+    Improved physical health: 1
+    Improves cardiovascular health: 1
+    Improved cardiovascular health and reduced risk of heart disease: 2
+    Improved cardiovascular health: 16
+
+benefit2:
+  Unique values: 7
+  Entropy: 1.148
+  Value frequencies:
+    Strengthens muscles and bones: 1
+    Stronger muscles and bones: 1
+    Increased strength and endurance: 1
+    Stronger muscles and bones, leading to better posture and reduced risk of injury: 1
+    Increased muscle strength and endurance: 14
+    Enhanced mental well-being: 1
+    Stronger muscles and bones, leading to better physical fitness and reduced risk of injury: 1
+
+benefit3:
+  Unique values: 12
+  Entropy: 2.346
+  Value frequencies:
+    Better mood and reduced stress levels: 2
+    Reduced risk of chronic diseases such as obesity, type 2 diabetes, and certain types of cancer: 1
+    Enhanced mood and reduced stress levels: 4
+    Better mental health and stress relief: 1
+    Improved mental health and mood, as exercise releases endorphins that can reduce stress and anxiety: 1
+    Boosted mood and reduced stress levels due to the release of endorphins: 1
+    Reduces stress and improves mental well-being: 1
+    Better mental health and reduced stress levels: 3
+    Better mental health and reduced stress: 2
+    Reduced risk of chronic diseases: 2
+    Reduced risk of chronic diseases such as obesity, type 2 diabetes, and certain cancers: 1
+    Increased energy levels: 1
+
+==================================================
+Prompt: List three random numbers between 1-100. Format as JSON with keys: num1, num2, num3
+Total responses: 20
+Unique responses: 11
+
+Field Analysis:
+
+num1:
+  Unique values: 2
+  Entropy: 0.562
+  Value frequencies:
+    42: 15
+    47: 5
+
+num2:
+  Unique values: 9
+  Entropy: 1.706
+  Value frequencies:
+    71: 1
+    73: 1
+    77: 1
+    17: 10
+    18: 1
+    19: 2
+    83: 1
+    22: 1
+    23: 2
+
+num3:
+  Unique values: 9
+  Entropy: 1.773
+  Value frequencies:
+    9: 1
+    11: 1
+    13: 1
+    19: 1
+    86: 1
+    87: 2
+    88: 3
+    89: 9
+    92: 1
+
+==================================================
+Prompt: Name three major cities. Format as JSON with keys: city1, city2, city3
+Total responses: 20
+Unique responses: 5
+
+Field Analysis:
+
+city1:
+  Unique values: 2
+  Entropy: 0.562
+  Value frequencies:
+    New York: 5
+    Tokyo: 15
+
+city2:
+  Unique values: 4
+  Entropy: 1.235
+  Value frequencies:
+    London: 2
+    New York: 6
+    Tokyo: 3
+    New York City: 9
+
+city3:
+  Unique values: 3
+  Entropy: 0.518
+  Value frequencies:
+    Paris: 1
+    Tokyo: 2
+    London: 17
+
+==================================================

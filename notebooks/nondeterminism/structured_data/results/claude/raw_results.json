@@ -1,0 +1,308 @@
+{
+  "What are three key benefits of exercise? Format response as JSON with keys: benefit1, benefit2, benefit3": [
+    {
+      "benefit1": "Improves cardiovascular health",
+      "benefit2": "Strengthens muscles and bones",
+      "benefit3": "Reduces stress and improves mental well-being"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mood and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Reduced risk of chronic diseases such as obesity, type 2 diabetes, and certain cancers"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Enhanced mood and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mental health and stress relief"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mental health and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Reduced risk of chronic diseases such as obesity, type 2 diabetes, and certain types of cancer"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Enhanced mood and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health and reduced risk of heart disease",
+      "benefit2": "Stronger muscles and bones, leading to better posture and reduced risk of injury",
+      "benefit3": "Boosted mood and reduced stress levels due to the release of endorphins"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mood and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Enhanced mood and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved physical health",
+      "benefit2": "Enhanced mental well-being",
+      "benefit3": "Increased energy levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased strength and endurance",
+      "benefit3": "Reduced risk of chronic diseases"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mental health and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health and reduced risk of heart disease",
+      "benefit2": "Stronger muscles and bones, leading to better physical fitness and reduced risk of injury",
+      "benefit3": "Improved mental health and mood, as exercise releases endorphins that can reduce stress and anxiety"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mental health and reduced stress"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mental health and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Better mental health and reduced stress"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Increased muscle strength and endurance",
+      "benefit3": "Enhanced mood and reduced stress levels"
+    },
+    {
+      "benefit1": "Improved cardiovascular health",
+      "benefit2": "Stronger muscles and bones",
+      "benefit3": "Reduced risk of chronic diseases"
+    }
+  ],
+  "List three random numbers between 1-100. Format as JSON with keys: num1, num2, num3": [
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 47,
+      "num2": 22,
+      "num3": 89
+    },
+    {
+      "num1": 47,
+      "num2": 23,
+      "num3": 86
+    },
+    {
+      "num1": 42,
+      "num2": 19,
+      "num3": 87
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 42,
+      "num2": 77,
+      "num3": 13
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 47,
+      "num2": 18,
+      "num3": 92
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 88
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 47,
+      "num2": 23,
+      "num3": 89
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 89
+    },
+    {
+      "num1": 42,
+      "num2": 19,
+      "num3": 87
+    },
+    {
+      "num1": 42,
+      "num2": 73,
+      "num3": 9
+    },
+    {
+      "num1": 42,
+      "num2": 71,
+      "num3": 19
+    },
+    {
+      "num1": 47,
+      "num2": 83,
+      "num3": 11
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 88
+    },
+    {
+      "num1": 42,
+      "num2": 17,
+      "num3": 88
+    }
+  ],
+  "Name three major cities. Format as JSON with keys: city1, city2, city3": [
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York",
+      "city3": "London"
+    },
+    {
+      "city1": "New York",
+      "city2": "London",
+      "city3": "Tokyo"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York",
+      "city3": "London"
+    },
+    {
+      "city1": "New York",
+      "city2": "London",
+      "city3": "Tokyo"
+    },
+    {
+      "city1": "New York",
+      "city2": "Tokyo",
+      "city3": "London"
+    },
+    {
+      "city1": "New York",
+      "city2": "Tokyo",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York City",
+      "city3": "Paris"
+    },
+    {
+      "city1": "New York",
+      "city2": "Tokyo",
+      "city3": "London"
+    },
+    {
+      "city1": "Tokyo",
+      "city2": "New York",
+      "city3": "London"
+    }
+  ]
+}

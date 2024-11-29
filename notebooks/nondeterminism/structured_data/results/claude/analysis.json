@@ -1,0 +1,126 @@
+{
+  "What are three key benefits of exercise? Format response as JSON with keys: benefit1, benefit2, benefit3": {
+    "total_responses": 20,
+    "unique_responses": 13,
+    "field_analysis": {
+      "benefit1": {
+        "unique_values": 4,
+        "value_frequencies": {
+          "Improved physical health": 1,
+          "Improves cardiovascular health": 1,
+          "Improved cardiovascular health and reduced risk of heart disease": 2,
+          "Improved cardiovascular health": 16
+        },
+        "entropy": 0.7083465777061715
+      },
+      "benefit2": {
+        "unique_values": 7,
+        "value_frequencies": {
+          "Strengthens muscles and bones": 1,
+          "Stronger muscles and bones": 1,
+          "Increased strength and endurance": 1,
+          "Stronger muscles and bones, leading to better posture and reduced risk of injury": 1,
+          "Increased muscle strength and endurance": 14,
+          "Enhanced mental well-being": 1,
+          "Stronger muscles and bones, leading to better physical fitness and reduced risk of injury": 1
+        },
+        "entropy": 1.14839214282331
+      },
+      "benefit3": {
+        "unique_values": 12,
+        "value_frequencies": {
+          "Better mood and reduced stress levels": 2,
+          "Reduced risk of chronic diseases such as obesity, type 2 diabetes, and certain types of cancer": 1,
+          "Enhanced mood and reduced stress levels": 4,
+          "Better mental health and stress relief": 1,
+          "Improved mental health and mood, as exercise releases endorphins that can reduce stress and anxiety": 1,
+          "Boosted mood and reduced stress levels due to the release of endorphins": 1,
+          "Reduces stress and improves mental well-being": 1,
+          "Better mental health and reduced stress levels": 3,
+          "Better mental health and reduced stress": 2,
+          "Reduced risk of chronic diseases": 2,
+          "Reduced risk of chronic diseases such as obesity, type 2 diabetes, and certain cancers": 1,
+          "Increased energy levels": 1
+        },
+        "entropy": 2.3457374038618126
+      }
+    }
+  },
+  "List three random numbers between 1-100. Format as JSON with keys: num1, num2, num3": {
+    "total_responses": 20,
+    "unique_responses": 11,
+    "field_analysis": {
+      "num1": {
+        "unique_values": 2,
+        "value_frequencies": {
+          "42": 15,
+          "47": 5
+        },
+        "entropy": 0.5623351446188083
+      },
+      "num2": {
+        "unique_values": 9,
+        "value_frequencies": {
+          "71": 1,
+          "73": 1,
+          "77": 1,
+          "17": 10,
+          "18": 1,
+          "19": 2,
+          "83": 1,
+          "22": 1,
+          "23": 2
+        },
+        "entropy": 1.705810290944979
+      },
+      "num3": {
+        "unique_values": 9,
+        "value_frequencies": {
+          "9": 1,
+          "11": 1,
+          "13": 1,
+          "19": 1,
+          "86": 1,
+          "87": 2,
+          "88": 3,
+          "89": 9,
+          "92": 1
+        },
+        "entropy": 1.7728746523964811
+      }
+    }
+  },
+  "Name three major cities. Format as JSON with keys: city1, city2, city3": {
+    "total_responses": 20,
+    "unique_responses": 5,
+    "field_analysis": {
+      "city1": {
+        "unique_values": 2,
+        "value_frequencies": {
+          "New York": 5,
+          "Tokyo": 15
+        },
+        "entropy": 0.5623351446188083
+      },
+      "city2": {
+        "unique_values": 4,
+        "value_frequencies": {
+          "London": 2,
+          "New York": 6,
+          "Tokyo": 3,
+          "New York City": 9
+        },
+        "entropy": 1.2353468116280646
+      },
+      "city3": {
+        "unique_values": 3,
+        "value_frequencies": {
+          "Paris": 1,
+          "Tokyo": 2,
+          "London": 17
+        },
+        "entropy": 0.5181862130502128
+      }
+    }
+  }
+}
