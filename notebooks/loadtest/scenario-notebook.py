@@ -1,19 +1,19 @@
-# Import asyncio for notebook compatibility
 import nest_asyncio
 nest_asyncio.apply()
 
 async def run_notebook_tests():
+    # Initialize with SSL verification disabled
     config = TestConfig(
         model_name="gpt-3.5-turbo",
         base_url="http://your-endpoint",
         api_key="your-key",
         client_type="openai",
-        system_prompt="You are a helpful AI assistant."
+        system_prompt="You are a helpful AI assistant.",
+        verify_ssl=False  # Disable SSL verification
     )
     
     tester = LoadTester(config)
     
-    # Run individual tests
     results = {}
     
     # Test 1: Basic single request
@@ -29,16 +29,17 @@ async def run_notebook_tests():
         concurrency=1
     )
     
-    # Additional tests...
+    # Test 3: High temperature with SSL verification enabled
+    config.verify_ssl = True  # Enable SSL verification for comparison
     config.temperature = 0.9
     tester = LoadTester(config)
-    results['high_temp'] = await tester.run_latency_test(
+    results['high_temp_ssl'] = await tester.run_latency_test(
         prompts=["Write a creative story about a robot."] * 5,
         concurrency=1
     )
     
     return results
 
-# Run tests and get results
+# Run tests
 results = await run_notebook_tests()
 print(json.dumps(results, indent=2))
