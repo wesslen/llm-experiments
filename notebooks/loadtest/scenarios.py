@@ -1,77 +1,58 @@
-import asyncio
-from load_tester import TestConfig, LoadTester
+import nest_asyncio
+nest_asyncio.apply()
 
-async def run_test_suite():
+async def run_notebook_tests():
     config = TestConfig(
         model_name="gpt-3.5-turbo",
         base_url="http://your-endpoint",
         api_key="your-key",
         client_type="openai",
-        system_prompt="You are a helpful AI assistant."
+        system_prompt="You are a helpful AI assistant.",
+        verify_ssl=False,
+        output_path="./test_results"
     )
     
     tester = LoadTester(config)
+    results = {}
     
-    # Test 1: Basic single request
-    print("\n=== Test 1: Basic Single Request ===")
-    results = await tester.run_latency_test(
+    # Basic test
+    results['basic'] = await tester.run_latency_test(
         prompts=["What is artificial intelligence?"],
         concurrency=1
     )
-    print(json.dumps(results, indent=2))
     
-    # Test 2: Long prompt test
-    print("\n=== Test 2: Long Prompt Test ===")
+    # Long prompt test
     long_prompt = "Explain the complete history of artificial intelligence, " * 50
-    results = await tester.run_latency_test(
+    results['long_prompt'] = await tester.run_latency_test(
         prompts=[long_prompt],
         concurrency=1
     )
-    print(json.dumps(results, indent=2))
     
-    # Test 3: High temperature creative tasks
-    print("\n=== Test 3: High Temperature Test ===")
+    # High temperature test
     config.temperature = 0.9
     tester = LoadTester(config)
-    results = await tester.run_latency_test(
+    results['high_temp'] = await tester.run_latency_test(
         prompts=["Write a creative story about a robot."] * 5,
         concurrency=1
     )
-    print(json.dumps(results, indent=2))
     
-    # Test 4: Concurrent requests
-    print("\n=== Test 4: Concurrent Requests Test ===")
-    config.temperature = 0.7  # Reset temperature
+    # Concurrent requests test
+    config.temperature = 0.7
     tester = LoadTester(config)
-    results = await tester.run_latency_test(
+    results['concurrent'] = await tester.run_latency_test(
         prompts=["Summarize the benefits of exercise."] * 10,
         concurrency=5
     )
-    print(json.dumps(results, indent=2))
     
-    # Test 5: Sustained load
-    print("\n=== Test 5: Sustained Load Test ===")
-    results = await tester.run_sustained_load_test(
+    # Sustained load test
+    results['sustained'] = await tester.run_sustained_load_test(
         prompt="What are the benefits of meditation?",
         requests_per_second=2,
         duration_seconds=30
     )
-    print(json.dumps(results, indent=2))
     
-    # Test 6: Variable length prompts with concurrency
-    print("\n=== Test 6: Variable Length with Concurrency ===")
-    base_prompt = "Explain quantum computing"
-    variable_prompts = tester.generate_variable_length_prompts(
-        base_prompt=base_prompt,
-        n_prompts=15,
-        min_length=100,
-        max_length=2000
-    )
-    results = await tester.run_latency_test(
-        prompts=variable_prompts,
-        concurrency=3
-    )
-    print(json.dumps(results, indent=2))
+    return results
 
-if __name__ == "__main__":
-    asyncio.run(run_test_suite())
+# Run tests
+results = await run_notebook_tests()
+print(json.dumps(results, indent=2))
