@@ -76,11 +76,13 @@ class LoadTester:
                         },
                         ssl=self.config.verify_ssl
                     ) as response:
-                        result = await response.json()
-                        completion = result['choices'][0]['message']['content']
+                        response_json = await response.json()
+                        if 'error' in response_json:
+                            raise Exception(response_json['error'])
+                        completion = response_json['choices'][0]['message']['content']
                         
             elif self.config.client_type == "openai":
-                result = await openai.chat.completions.create(
+                response = await openai.chat.completions.create(
                     model=self.config.model_name,
                     messages=[
                         {"role": "system", "content": self.config.system_prompt or ""},
@@ -90,15 +92,15 @@ class LoadTester:
                     top_p=self.config.top_p,
                     max_tokens=self.config.max_tokens
                 )
-                completion = result.choices[0].message.content
+                completion = response.choices[0].message.content
                 
             elif self.config.client_type == "langchain":
                 messages = []
                 if self.config.system_prompt:
                     messages.append(SystemMessage(content=self.config.system_prompt))
                 messages.append(HumanMessage(content=prompt))
-                result = await self.client.agenerate([messages])
-                completion = result.generations[0][0].text
+                response = await self.client.agenerate([messages])
+                completion = response.generations[0][0].text
                 
             latency = time.time() - start_time
             output_tokens = self.count_tokens(completion)
@@ -114,7 +116,7 @@ class LoadTester:
             }
             
         except Exception as e:
-            logging.error(f"Request failed: {str(e)}")
+            logging.error(f"Request failed: {str(e)}\nPrompt: {prompt}")
             return {
                 "success": False,
                 "error": str(e),
