@@ -9,6 +9,7 @@ import json
 import logging
 from concurrent.futures import ThreadPoolExecutor
 import openai
+import httpx
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 
@@ -22,6 +23,7 @@ class TestConfig:
     temperature: float = 0.7
     top_p: float = 1.0
     max_tokens: int = 1000
+    verify_ssl: bool = True
     
 class LoadTester:
     def __init__(self, config: TestConfig):
@@ -33,6 +35,7 @@ class LoadTester:
         if self.config.client_type == "openai":
             openai.api_key = self.config.api_key
             openai.base_url = self.config.base_url
+            openai.default_http_client = httpx.Client(verify=self.config.verify_ssl)
         elif self.config.client_type == "langchain":
             self.client = ChatOpenAI(
                 model_name=self.config.model_name,
@@ -40,14 +43,16 @@ class LoadTester:
                 base_url=self.config.base_url,
                 temperature=self.config.temperature,
                 top_p=self.config.top_p,
-                max_tokens=self.config.max_tokens
+                max_tokens=self.config.max_tokens,
+                http_client=httpx.Client(verify=self.config.verify_ssl)
             )
 
     async def _make_request(self, prompt: str) -> dict:
         start_time = time.time()
         try:
             if self.config.client_type == "requests":
-                async with aiohttp.ClientSession() as session:
+                connector = aiohttp.TCPConnector(verify_ssl=self.config.verify_ssl)
+                async with aiohttp.ClientSession(connector=connector) as session:
                     async with session.post(
                         f"{self.config.base_url}/v1/chat/completions",
                         headers={"Authorization": f"Bearer {self.config.api_key}"},
@@ -89,6 +94,7 @@ class LoadTester:
         except Exception as e:
             logging.error(f"Request failed: {str(e)}")
             return {"success": False, "error": str(e), "prompt_length": len(prompt)}
+
 
     async def run_latency_test(self, prompts: List[str], concurrency: int = 1):
         async def _batch_requests(batch: List[str]):
