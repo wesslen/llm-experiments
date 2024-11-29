@@ -1,11 +1,8 @@
 {
   "exercise": {
-    "other_error": 7
-  },
-  "numbers": {
-    "other_error": 20
+    "other_error": 9
   },
   "cities": {
-    "other_error": 20
+    "other_error": 1
   }
 }

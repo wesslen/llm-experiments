@@ -1,479 +1,627 @@
 {
   "exercise": [
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Improved cardiovascular health, increasing overall physical fitness and reducing the risk of heart disease.\", \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance overall mental well-being by promoting the release of endorphins, also known as 'feel-good' hormones, and reducing stress levels.\", \"benefit3\": \"Regular exercise can increase energy levels and reduce fatigue by improving circulation, boosting metabolic rate, and enhancing sleep quality.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  String should have at most 200 characters [type=string_too_long, input_value=\"Exercise has been shown ...reducing stress levels.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "{\"benefit1\": \"Improved cardiovascular health, increasing overall physical fitness and reducing the risk of heart disease.\", \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance overall mental well-being by promoting the release of endorphins, also known as 'feel-good' hormones, and reducing stress levels.\", \"benefit3\": \"Regular exercise can increase energy levels and reduce fatigue by improving circulation, boosting metabolic rate, and enhancing sleep quality.\"}"
+      "success": true,
+      "data": {
+        "benefit1": "Regular exercise helps improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease, and increasing overall endurance.",
+        "benefit2": "Exercise has a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing overall cognitive function.",
+        "benefit3": "Exercise can increase energy levels and reduce fatigue by improving sleep quality, boosting energy metabolism, and reducing stress levels."
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n    \"benefit1\": \"Regular exercise helps improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease, and increasing overall endurance.\",\n    \"benefit2\": \"Exercise has a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing overall cognitive function.\",\n    \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, boosting energy metabolism, and reducing stress levels.\"\n}\n```"
     },
     {
       "success": true,
       "data": {
-        "benefit1": "Exercise can improve cardiovascular health by strengthening the heart and lungs, increasing stamina, and reducing the risk of heart disease.",
-        "benefit2": "Regular physical activity has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood, self-esteem, and overall sense of well-being.",
-        "benefit3": "Exercise can increase energy levels and reduce fatigue by improving sleep, boosting the immune system, and releasing endorphins, also known as \"feel-good\" hormones."
+        "benefit1": "Regular exercise can improve cardiovascular health by strengthening the heart and lungs, increasing endurance, and reducing the risk of heart disease.",
+        "benefit2": "Exercise has been shown to effectively manage stress and anxiety by releasing endorphins, improving sleep quality, and enhancing overall mental well-being.",
+        "benefit3": "Increased physical activity can boost energy levels and improve quality of life by providing a sense of accomplishment and allowing individuals to tackle daily tasks with more enthusiasm."
       },
       "error_type": null,
       "error_detail": null,
-      "raw_response": "```json\n{\n  \"benefit1\": \"Exercise can improve cardiovascular health by strengthening the heart and lungs, increasing stamina, and reducing the risk of heart disease.\",\n  \"benefit2\": \"Regular physical activity has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood, self-esteem, and overall sense of well-being.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep, boosting the immune system, and releasing endorphins, also known as \\\"feel-good\\\" hormones.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Regular exercise can improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease, and increasing overall physical fitness.",
-        "benefit2": "Regular exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, improving mood, and enhancing overall mental well-being.",
-        "benefit3": "Exercise can increase energy levels and reduce fatigue by improving sleep quality, increasing the release of energizing hormones like endorphins, and boosting productivity and motivation."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```\n{\n  \"benefit1\": \"Regular exercise can improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease, and increasing overall physical fitness.\",\n  \"benefit2\": \"Regular exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, improving mood, and enhancing overall mental well-being.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, increasing the release of energizing hormones like endorphins, and boosting productivity and motivation.\"\n}\n```"
+      "raw_response": "```json\n{\n  \"benefit1\": \"Regular exercise can improve cardiovascular health by strengthening the heart and lungs, increasing endurance, and reducing the risk of heart disease.\",\n  \"benefit2\": \"Exercise has been shown to effectively manage stress and anxiety by releasing endorphins, improving sleep quality, and enhancing overall mental well-being.\",\n  \"benefit3\": \"Increased physical activity can boost energy levels and improve quality of life by providing a sense of accomplishment and allowing individuals to tackle daily tasks with more enthusiasm.\"\n}\n```"
     },
     {
       "success": false,
       "data": null,
       "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can lower the risk of developing type 2 diabetes as it improves insulin sensitivity, boosting glucose metabolism.\", \"benefit2\": \"Consistent physical activity has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones, which improve mood, reduce stress levels, and promote emotional well-being.\", \"benefit3\": \"Exercising regularly can increase energy levels and reduce fatigue as it improves the body's ability to transport oxygen and nutrients to cells, enhancing overall physical performance and vitality.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  String should have at most 200 characters [type=string_too_long, input_value=\"Consistent physical acti...e emotional well-being.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "```json\n{\n    \"benefit1\": \"Regular exercise can lower the risk of developing type 2 diabetes as it improves insulin sensitivity, boosting glucose metabolism.\",\n    \"benefit2\": \"Consistent physical activity has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones, which improve mood, reduce stress levels, and promote emotional well-being.\",\n    \"benefit3\": \"Exercising regularly can increase energy levels and reduce fatigue as it improves the body's ability to transport oxygen and nutrients to cells, enhancing overall physical performance and vitality.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Regular exercise can lower blood pressure, reduce the risk of heart disease, and improve overall cardiovascular health.",
-        "benefit2": "Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones.",
-        "benefit3": "Exercise can increase energy levels and boost productivity, allowing individuals to tackle daily tasks and maintain a healthy work-life balance."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```json\n{\n    \"benefit1\": \"Regular exercise can lower blood pressure, reduce the risk of heart disease, and improve overall cardiovascular health.\",\n    \"benefit2\": \"Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones.\",\n    \"benefit3\": \"Exercise can increase energy levels and boost productivity, allowing individuals to tackle daily tasks and maintain a healthy work-life balance.\"\n}\n```"
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can reduce the risk of heart disease, stroke, and high blood pressure by improving circulation and cardiovascular function.\", \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\", \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, increasing alertness, and releasing endorphins, which can help combat mid-day slumps and improve overall productivity.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit3\n  String should have at most 200 characters [type=string_too_long, input_value='Exercise can increase en...e overall productivity.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```\n{\n  \"benefit1\": \"Regular exercise can reduce the risk of heart disease, stroke, and high blood pressure by improving circulation and cardiovascular function.\",\n  \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, increasing alertness, and releasing endorphins, which can help combat mid-day slumps and improve overall productivity.\"\n}\n```"
     },
     {
       "success": false,
       "data": null,
       "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can improve cardiovascular health by strengthening the heart and increasing blood flow.\", \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones.\", \"benefit3\": \"Regular physical activity can increase energy levels and reduce fatigue, allowing for more productive daily routines and a better work-life balance.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value=\"Exercise has been shown ...s 'feel-good' hormones.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "```json\n{\n  \"benefit1\": \"Regular exercise can improve cardiovascular health by strengthening the heart and increasing blood flow.\",\n  \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones.\",\n  \"benefit3\": \"Regular physical activity can increase energy levels and reduce fatigue, allowing for more productive daily routines and a better work-life balance.\"\n}\n```"
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Exercise can increase muscle mass and reduce body fat, improving overall physical fitness.\", \"benefit2\": \"Regular exercise has been shown to reduce symptoms of anxiety and depression by promoting the production of neurotransmitters such as serotonin and endorphins.\", \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, boosting the immune system, and increasing oxygenation of the body.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value='Regular exercise has bee...rotonin and endorphins.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```json\n{\n  \"benefit1\": \"Exercise can increase muscle mass and reduce body fat, improving overall physical fitness.\",\n  \"benefit2\": \"Regular exercise has been shown to reduce symptoms of anxiety and depression by promoting the production of neurotransmitters such as serotonin and endorphins.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, boosting the immune system, and increasing oxygenation of the body.\"\n}\n```"
+    },
+    {
+      "success": false,
+      "data": null,
+      "error_type": "other_error",
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular physical exercise can lower blood pressure and reduce the risk of heart disease by strengthening the heart and improving circulation.\", \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function through the release of endorphins and other neurotransmitters.\", \"benefit3\": \"Engaging in physical activity can increase energy levels and reduce fatigue by improving sleep quality, boosting the immune system, and increasing the production of mitochondria in cells, which are responsible for generating energy.\"}. Got: 2 validation errors for ExerciseBenefits\nbenefit2\n  String should have at most 200 characters [type=string_too_long, input_value='Exercise has been shown ...ther neurotransmitters.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nbenefit3\n  String should have at most 200 characters [type=string_too_long, input_value='Engaging in physical act... for generating energy.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```\n{\n  \"benefit1\": \"Regular physical exercise can lower blood pressure and reduce the risk of heart disease by strengthening the heart and improving circulation.\",\n  \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function through the release of endorphins and other neurotransmitters.\",\n  \"benefit3\": \"Engaging in physical activity can increase energy levels and reduce fatigue by improving sleep quality, boosting the immune system, and increasing the production of mitochondria in cells, which are responsible for generating energy.\"\n}\n```"
     },
     {
       "success": true,
       "data": {
-        "benefit1": "Regular exercise can improve cardiovascular health by reducing the risk of heart disease and lowering blood pressure.",
+        "benefit1": "Regular exercise can strengthen bones and muscles, reducing the risk of osteoporosis and injury.",
+        "benefit2": "Physical activity can serve as an effective therapy for mental health conditions, such as depression and anxiety, by improving mood and reducing stress.",
+        "benefit3": "Engaging in regular physical activity can increase energy levels and reduce fatigue, enabling individuals to tackle daily tasks with more vigor and accomplish more in less time."
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"benefit1\": \"Regular exercise can strengthen bones and muscles, reducing the risk of osteoporosis and injury.\",\n  \"benefit2\": \"Physical activity can serve as an effective therapy for mental health conditions, such as depression and anxiety, by improving mood and reducing stress.\",\n  \"benefit3\": \"Engaging in regular physical activity can increase energy levels and reduce fatigue, enabling individuals to tackle daily tasks with more vigor and accomplish more in less time.\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "benefit1": "Exercise strengthens muscles and bones, improving physical function and reducing the risk of injury and illness.",
+        "benefit2": "Regular exercise reduces symptoms of anxiety and depression, improves mood, and enhances cognitive function, supporting overall mental well-being.",
+        "benefit3": "Physical activity boosts energy levels, helping people feel more alert and productive throughout the day, while also promoting better sleep quality."
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"benefit1\": \"Exercise strengthens muscles and bones, improving physical function and reducing the risk of injury and illness.\",\n  \"benefit2\": \"Regular exercise reduces symptoms of anxiety and depression, improves mood, and enhances cognitive function, supporting overall mental well-being.\",\n  \"benefit3\": \"Physical activity boosts energy levels, helping people feel more alert and productive throughout the day, while also promoting better sleep quality.\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "benefit1": "Improved cardiovascular health, lowering the risk of heart disease and stroke",
+        "benefit2": "Enhanced mental health through reduced stress, anxiety, and symptoms of depression, leading to improved mood and cognitive function",
+        "benefit3": "Increased energy levels, allowing for greater productivity and engagement in daily activities and hobbies"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"benefit1\": \"Improved cardiovascular health, lowering the risk of heart disease and stroke\",\n  \"benefit2\": \"Enhanced mental health through reduced stress, anxiety, and symptoms of depression, leading to improved mood and cognitive function\",\n  \"benefit3\": \"Increased energy levels, allowing for greater productivity and engagement in daily activities and hobbies\"\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "benefit1": "Improved cardiovascular health, reducing the risk of heart disease and stroke.",
+        "benefit2": "Regular exercise has been shown to reduce symptoms of anxiety and depression, improving overall mental health and well-being.",
+        "benefit3": "Exercise can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks with more efficiency and productivity."
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```\n{\n  \"benefit1\": \"Improved cardiovascular health, reducing the risk of heart disease and stroke.\",\n  \"benefit2\": \"Regular exercise has been shown to reduce symptoms of anxiety and depression, improving overall mental health and well-being.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks with more efficiency and productivity.\"\n}\n```"
+    },
+    {
+      "success": false,
+      "data": null,
+      "error_type": "other_error",
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise strengthens the cardiovascular system by improving circulation and reducing blood pressure.\", \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by releasing endorphins and improving mood regulation.\", \"benefit3\": \"Exercise can increase energy levels by improving sleep quality and reducing fatigue, allowing individuals to tackle daily tasks with renewed vigor.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value='Exercise has been shown ...roving mood regulation.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```\n{\n  \"benefit1\": \"Regular exercise strengthens the cardiovascular system by improving circulation and reducing blood pressure.\",\n  \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by releasing endorphins and improving mood regulation.\",\n  \"benefit3\": \"Exercise can increase energy levels by improving sleep quality and reducing fatigue, allowing individuals to tackle daily tasks with renewed vigor.\"\n}\n```"
+    },
+    {
+      "success": false,
+      "data": null,
+      "error_type": "other_error",
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"description\": \"Structured format for exercise benefits\", \"properties\": {\"benefit1\": {\"description\": \"A key physical health benefit of exercise\", \"maxLength\": 200, \"minLength\": 10, \"title\": \"Benefit1\", \"type\": \"string\"}, \"benefit2\": {\"description\": \"A key mental health benefit of exercise\", \"maxLength\": 200, \"minLength\": 10, \"title\": \"Benefit2\", \"type\": \"string\"}, \"benefit3\": {\"description\": \"A key energy or lifestyle benefit of exercise\", \"maxLength\": 200, \"minLength\": 10, \"title\": \"Benefit3\", \"type\": \"string\"}}, \"required\": [\"benefit1\", \"benefit2\", \"benefit3\"]}. Got: 3 validation errors for ExerciseBenefits\nbenefit1\n  Field required [type=missing, input_value={'description': 'Structur...'benefit2', 'benefit3']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.9/v/missing\nbenefit2\n  Field required [type=missing, input_value={'description': 'Structur...'benefit2', 'benefit3']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.9/v/missing\nbenefit3\n  Field required [type=missing, input_value={'description': 'Structur...'benefit2', 'benefit3']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.9/v/missing\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```json\n{\n  \"description\": \"Structured format for exercise benefits\",\n  \"properties\": {\n    \"benefit1\": {\n      \"description\": \"A key physical health benefit of exercise\",\n      \"maxLength\": 200,\n      \"minLength\": 10,\n      \"title\": \"Benefit1\",\n      \"type\": \"string\"\n    },\n    \"benefit2\": {\n      \"description\": \"A key mental health benefit of exercise\",\n      \"maxLength\": 200,\n      \"minLength\": 10,\n      \"title\": \"Benefit2\",\n      \"type\": \"string\"\n    },\n    \"benefit3\": {\n      \"description\": \"A key energy or lifestyle benefit of exercise\",\n      \"maxLength\": 200,\n      \"minLength\": 10,\n      \"title\": \"Benefit3\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"benefit1\",\n    \"benefit2\",\n    \"benefit3\"\n  ]\n}\n{\n  \"benefit1\": \"Regular exercise can improve cardiovascular health by strengthening the heart and lungs, reducing blood pressure, and increasing stamina.\",\n  \"benefit2\": \"Exercise has been shown to decrease symptoms of anxiety and depression by releasing endorphins, improving mood, and reducing stress.\",\n  \"benefit3\": \"Exercise can increase energy levels by improving sleep quality, boosting metabolism, and reducing fatigue, making it easier to tackle daily tasks and activities.\"\n}\n```"
+    },
+    {
+      "success": false,
+      "data": null,
+      "error_type": "other_error",
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can increase muscle mass and reduce body fat, improving overall physical health.\", \"benefit2\": \"Physical activity has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones. Exercise can also improve mood and reduce stress levels.\", \"benefit3\": \"Exercise can boost energy levels and reduce fatigue by increasing oxygen flow and improving cardiovascular health. It can also improve sleep quality, making it easier to wake up feeling refreshed and ready to tackle the day.\"}. Got: 2 validation errors for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value=\"Physical activity has be...d reduce stress levels.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nbenefit3\n  String should have at most 200 characters [type=string_too_long, input_value='Exercise can boost energ...eady to tackle the day.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```json\n{\n  \"benefit1\": \"Regular exercise can increase muscle mass and reduce body fat, improving overall physical health.\",\n  \"benefit2\": \"Physical activity has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones. Exercise can also improve mood and reduce stress levels.\",\n  \"benefit3\": \"Exercise can boost energy levels and reduce fatigue by increasing oxygen flow and improving cardiovascular health. It can also improve sleep quality, making it easier to wake up feeling refreshed and ready to tackle the day.\"\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "benefit1": "Regular exercise can help improve cardiovascular health by reducing blood pressure, increasing circulation, and strengthening the heart.",
+        "benefit2": "Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins and promoting relaxation.",
+        "benefit3": "Engaging in physical activity can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks with more motivation and enthusiasm."
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"benefit1\": \"Regular exercise can help improve cardiovascular health by reducing blood pressure, increasing circulation, and strengthening the heart.\",\n  \"benefit2\": \"Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins and promoting relaxation.\",\n  \"benefit3\": \"Engaging in physical activity can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks with more motivation and enthusiasm.\"\n}"
+    },
+    {
+      "success": false,
+      "data": null,
+      "error_type": "other_error",
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can strengthen muscles and bones, reducing the risk of osteoporosis, fractures, and bone loss.\", \"benefit2\": \"Exercise has a profound impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones, which help regulate mood and emotional well-being.\", \"benefit3\": \"Exercise can boost energy levels, allowing individuals to tackle daily tasks with more vitality and endurance, while also improving sleep quality, leading to a better overall quality of life.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  String should have at most 200 characters [type=string_too_long, input_value=\"Exercise has a profound ...d emotional well-being.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```json\n{\n    \"benefit1\": \"Regular exercise can strengthen muscles and bones, reducing the risk of osteoporosis, fractures, and bone loss.\",\n    \"benefit2\": \"Exercise has a profound impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones, which help regulate mood and emotional well-being.\",\n    \"benefit3\": \"Exercise can boost energy levels, allowing individuals to tackle daily tasks with more vitality and endurance, while also improving sleep quality, leading to a better overall quality of life.\"\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "benefit1": "Regular physical exercise has been shown to reduce the risk of heart disease, type 2 diabetes, and certain types of cancer.",
         "benefit2": "Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.",
-        "benefit3": "Exercise can increase energy levels and reduce fatigue by improving sleep quality, reducing stress, and boosting metabolism."
+        "benefit3": "Engaging in regular physical activity can give you more energy throughout the day, improve sleep quality, and increase productivity."
       },
       "error_type": null,
       "error_detail": null,
-      "raw_response": "Here is a well-formatted JSON instance conforming to the specified schema:\n\n```json\n{\n  \"benefit1\": \"Regular exercise can improve cardiovascular health by reducing the risk of heart disease and lowering blood pressure.\",\n  \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, reducing stress, and boosting metabolism.\"\n}\n```\n\nThis instance lists three distinct benefits of exercise:\n\n*   A physical benefit: \"Regular exercise can improve cardiovascular health by reducing the risk of heart disease and lowering blood pressure.\"\n*   A mental benefit: \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\"\n*   A lifestyle/energy-related benefit: \"Exercise can increase energy levels and reduce fatigue by improving sleep quality, reducing stress, and boosting metabolism.\""
+      "raw_response": "```json\n{\n  \"benefit1\": \"Regular physical exercise has been shown to reduce the risk of heart disease, type 2 diabetes, and certain types of cancer.\",\n  \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\",\n  \"benefit3\": \"Engaging in regular physical activity can give you more energy throughout the day, improve sleep quality, and increase productivity.\"\n}\n```"
     },
     {
       "success": false,
       "data": null,
       "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise strengthens the cardiovascular system, reducing the risk of heart disease and improving overall physical function by enhancing muscle and bone density.\", \"benefit2\": \"Exercise stimulates the production of neurotransmitters and hormones that promote improved mood and reduced stress, contributing to enhanced mental health and resilience against mental health conditions.\", \"benefit3\": \"Consistent physical activity improves energy levels and endurance, making daily tasks and responsibilities more manageable, and often aiding in better sleep quality.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  String should have at most 200 characters [type=string_too_long, input_value='Exercise stimulates the ...ntal health conditions.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "{\n  \"benefit1\": \"Regular exercise strengthens the cardiovascular system, reducing the risk of heart disease and improving overall physical function by enhancing muscle and bone density.\",\n  \"benefit2\": \"Exercise stimulates the production of neurotransmitters and hormones that promote improved mood and reduced stress, contributing to enhanced mental health and resilience against mental health conditions.\",\n  \"benefit3\": \"Consistent physical activity improves energy levels and endurance, making daily tasks and responsibilities more manageable, and often aiding in better sleep quality.\"\n}"
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Improved Cardiovascular Health: Regular exercise strengthens the heart and lungs, reducing the risk of heart disease, high blood pressure, and stroke.\", \"benefit2\": \"Enhanced Mental Health: Exercise reduces symptoms of anxiety and depression by releasing endorphins, improving mood, and promoting better sleep.\", \"benefit3\": \"Increased Energy and Productivity: Regular physical activity boosts energy levels, enhances cognitive function, and allows for more efficient use of time, making it easier to accomplish daily tasks and responsibilities.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit3\n  String should have at most 200 characters [type=string_too_long, input_value='Increased Energy and Pro...s and responsibilities.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_too_long\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "{\n  \"benefit1\": \"Improved Cardiovascular Health: Regular exercise strengthens the heart and lungs, reducing the risk of heart disease, high blood pressure, and stroke.\",\n  \"benefit2\": \"Enhanced Mental Health: Exercise reduces symptoms of anxiety and depression by releasing endorphins, improving mood, and promoting better sleep.\",\n  \"benefit3\": \"Increased Energy and Productivity: Regular physical activity boosts energy levels, enhances cognitive function, and allows for more efficient use of time, making it easier to accomplish daily tasks and responsibilities.\"\n}"
     },
     {
       "success": true,
       "data": {
-        "benefit1": "Regular exercise can help you maintain a healthy weight and reduce the risk of chronic diseases such as diabetes, cardiovascular disease, and certain types of cancer.",
-        "benefit2": "Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood and overall mental well-being.",
-        "benefit3": "Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing you to tackle daily tasks with more enthusiasm and productivity."
+        "benefit1": "Regular exercise can strengthen the heart and lungs, improving cardiovascular health and reducing the risk of heart disease and stroke.",
+        "benefit2": "Physical activity has been shown to have a positive effect on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.",
+        "benefit3": "Exercise can increase energy levels and reduce fatigue, enabling individuals to tackle daily tasks with more enthusiasm and productivity."
       },
       "error_type": null,
       "error_detail": null,
-      "raw_response": "{\n    \"benefit1\": \"Regular exercise can help you maintain a healthy weight and reduce the risk of chronic diseases such as diabetes, cardiovascular disease, and certain types of cancer.\",\n    \"benefit2\": \"Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood and overall mental well-being.\",\n    \"benefit3\": \"Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing you to tackle daily tasks with more enthusiasm and productivity.\"\n}"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Reduces the risk of chronic diseases such as heart disease, diabetes, and certain types of cancer by strengthening the cardiovascular system and improving insulin sensitivity",
-        "benefit2": "Reduces symptoms of anxiety and depression by releasing endorphins, improving mood, and enhancing cognitive function, thereby promoting mental health and well-being",
-        "benefit3": "Provides a natural energy boost and improves sleep quality by regulating bodily rhythms, leading to increased energy levels and enhanced overall quality of life"
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```\n{\n    \"benefit1\": \"Reduces the risk of chronic diseases such as heart disease, diabetes, and certain types of cancer by strengthening the cardiovascular system and improving insulin sensitivity\",\n    \"benefit2\": \"Reduces symptoms of anxiety and depression by releasing endorphins, improving mood, and enhancing cognitive function, thereby promoting mental health and well-being\",\n    \"benefit3\": \"Provides a natural energy boost and improves sleep quality by regulating bodily rhythms, leading to increased energy levels and enhanced overall quality of life\"\n}\n```"
+      "raw_response": "```json\n{\n  \"benefit1\": \"Regular exercise can strengthen the heart and lungs, improving cardiovascular health and reducing the risk of heart disease and stroke.\",\n  \"benefit2\": \"Physical activity has been shown to have a positive effect on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\",\n  \"benefit3\": \"Exercise can increase energy levels and reduce fatigue, enabling individuals to tackle daily tasks with more enthusiasm and productivity.\"\n}\n```"
     },
     {
       "success": false,
       "data": null,
       "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can increase muscle mass and bone density, reducing the risk of osteoporosis and fractures.\", \"benefit2\": \"Exercise has been shown to reduce symptoms of depression and anxiety by releasing endorphins, also known as 'feel-good' hormones, and improving mood regulation.\", \"benefit3\": \"Regular physical activity can increase energy levels and reduce fatigue, making it easier to tackle daily tasks and responsibilities.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value=\"Exercise has been shown ...roving mood regulation.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "```json\n{\n  \"benefit1\": \"Regular exercise can increase muscle mass and bone density, reducing the risk of osteoporosis and fractures.\",\n  \"benefit2\": \"Exercise has been shown to reduce symptoms of depression and anxiety by releasing endorphins, also known as 'feel-good' hormones, and improving mood regulation.\",\n  \"benefit3\": \"Regular physical activity can increase energy levels and reduce fatigue, making it easier to tackle daily tasks and responsibilities.\"\n}\n```"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Improved cardiovascular health, reducing the risk of heart disease and stroke\", \"benefit2\": \"Exercise has been shown to help alleviate symptoms of anxiety and depression, and can also improve sleep quality and duration.\", \"benefit3\": \"Regular exercise can increase energy levels and reduce fatigue, helping individuals feel more motivated and productive throughout the day\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value='Exercise has been shown ...p quality and duration.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "```\n{\n  \"benefit1\": \"Improved cardiovascular health, reducing the risk of heart disease and stroke\",\n  \"benefit2\": \"Exercise has been shown to help alleviate symptoms of anxiety and depression, and can also improve sleep quality and duration.\",\n  \"benefit3\": \"Regular exercise can increase energy levels and reduce fatigue, helping individuals feel more motivated and productive throughout the day\"\n}\n```"
+      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Exercise can improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease and stroke.\", \"benefit2\": \"Regular exercise can help reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones, which can improve mood and reduce stress levels.\", \"benefit3\": \"Exercise can increase energy levels and improve overall well-being, making it easier to tackle daily tasks and maintain a healthy work-life balance.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value=\"Regular exercise can hel...d reduce stress levels.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```json\n{\n  \"benefit1\": \"Exercise can improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease and stroke.\",\n  \"benefit2\": \"Regular exercise can help reduce symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones, which can improve mood and reduce stress levels.\",\n  \"benefit3\": \"Exercise can increase energy levels and improve overall well-being, making it easier to tackle daily tasks and maintain a healthy work-life balance.\"\n}\n```"
     },
     {
       "success": true,
       "data": {
-        "benefit1": "Regular exercise helps to strengthen your cardiovascular system, improving circulation and lowering the risk of heart disease.",
-        "benefit2": "Exercise has been shown to reduce symptoms of anxiety and depression by promoting the release of endorphins, which can help improve mood and overall mental health.",
-        "benefit3": "Incorporating physical activity into your daily routine can increase energy levels and reduce fatigue, allowing you to tackle daily tasks more efficiently and effectively."
+        "benefit1": "Enhanced cardiovascular health, allowing the heart to pumping more efficiently and reducing the risk of heart disease",
+        "benefit2": "Improved mental health by reducing symptoms of anxiety and depression through the release of endorphins and other neurotransmitters",
+        "benefit3": "Increased energy levels and improved sleep quality through regular physical activity"
       },
       "error_type": null,
       "error_detail": null,
-      "raw_response": "{\n \"benefit1\": \"Regular exercise helps to strengthen your cardiovascular system, improving circulation and lowering the risk of heart disease.\",\n \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by promoting the release of endorphins, which can help improve mood and overall mental health.\",\n \"benefit3\": \"Incorporating physical activity into your daily routine can increase energy levels and reduce fatigue, allowing you to tackle daily tasks more efficiently and effectively.\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "Failed to parse ExerciseBenefits from completion {\"benefit1\": \"Regular exercise can lower your blood pressure and reduce the risk of heart disease, improving circulation and increasing overall physical fitness.\", \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as \\\"feel-good\\\" hormones, and improving self-esteem.\", \"benefit3\": \"Engaging in regular physical activity can boost energy levels and reduce fatigue, allowing you to tackle daily tasks and responsibilities with renewed vigor and enthusiasm.\"}. Got: 1 validation error for ExerciseBenefits\nbenefit2\n  Value error, benefit2 must mention mental health [type=value_error, input_value='Exercise has been shown ... improving self-esteem.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/value_error\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
-      "raw_response": "```json\n{\n  \"benefit1\": \"Regular exercise can lower your blood pressure and reduce the risk of heart disease, improving circulation and increasing overall physical fitness.\",\n  \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression by releasing endorphins, also known as \\\"feel-good\\\" hormones, and improving self-esteem.\",\n  \"benefit3\": \"Engaging in regular physical activity can boost energy levels and reduce fatigue, allowing you to tackle daily tasks and responsibilities with renewed vigor and enthusiasm.\"\n}\n```"
+      "raw_response": "{\n  \"benefit1\": \"Enhanced cardiovascular health, allowing the heart to pumping more efficiently and reducing the risk of heart disease\",\n  \"benefit2\": \"Improved mental health by reducing symptoms of anxiety and depression through the release of endorphins and other neurotransmitters\",\n  \"benefit3\": \"Increased energy levels and improved sleep quality through regular physical activity\"\n}"
     },
     {
       "success": true,
       "data": {
-        "benefit1": "Exercise can help reduce obesity and lower the risk of chronic diseases, such as diabetes and heart disease.",
-        "benefit2": "Regular exercise can help alleviate symptoms of anxiety and depression by releasing endorphins and improving mood regulation, promoting better mental health and overall well-being.",
-        "benefit3": "Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks and responsibilities with more vitality and enthusiasm."
+        "benefit1": "Regular exercise can improve cardiovascular health by strengthening the heart and increasing blood flow to the muscles.",
+        "benefit2": "Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance cognitive function, thereby contributing to overall mental health.",
+        "benefit3": "Staying physically active can increase energy levels and improve sleep quality, allowing individuals to tackle daily tasks and responsibilities with more vitality and enthusiasm."
       },
       "error_type": null,
       "error_detail": null,
-      "raw_response": "```\n{\n  \"benefit1\": \"Exercise can help reduce obesity and lower the risk of chronic diseases, such as diabetes and heart disease.\",\n  \"benefit2\": \"Regular exercise can help alleviate symptoms of anxiety and depression by releasing endorphins and improving mood regulation, promoting better mental health and overall well-being.\",\n  \"benefit3\": \"Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks and responsibilities with more vitality and enthusiasm.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Regular exercise can lower blood pressure and reduce the risk of heart disease by strengthening the heart and improving circulation.",
-        "benefit2": "Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.",
-        "benefit3": "Engaging in regular physical activity can boost energy levels and reduce fatigue, making it easier to tackle daily tasks and activities."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```json\n{\n    \"benefit1\": \"Regular exercise can lower blood pressure and reduce the risk of heart disease by strengthening the heart and improving circulation.\",\n    \"benefit2\": \"Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.\",\n    \"benefit3\": \"Engaging in regular physical activity can boost energy levels and reduce fatigue, making it easier to tackle daily tasks and activities.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Regular aerobic exercise can lower resting blood pressure and reduce the risk of heart disease.",
-        "benefit2": "Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins and improving mood.",
-        "benefit3": "Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing for more productivity and a better overall quality of life."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```json\n{\n  \"benefit1\": \"Regular aerobic exercise can lower resting blood pressure and reduce the risk of heart disease.\",\n  \"benefit2\": \"Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins and improving mood.\",\n  \"benefit3\": \"Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing for more productivity and a better overall quality of life.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Exercise reduces blood pressure and risk of heart disease, strengthening the cardiovascular system.",
-        "benefit2": "Exercise reduces symptoms of anxiety and depression, improves mood, and enhances cognitive function, promoting better mental health.",
-        "benefit3": "Exercise increases energy levels, allowing for more productivity and better work-life balance, and even improves sleep quality."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```json\n{\n  \"benefit1\": \"Exercise reduces blood pressure and risk of heart disease, strengthening the cardiovascular system.\",\n  \"benefit2\": \"Exercise reduces symptoms of anxiety and depression, improves mood, and enhances cognitive function, promoting better mental health.\",\n  \"benefit3\": \"Exercise increases energy levels, allowing for more productivity and better work-life balance, and even improves sleep quality.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Regular exercise can help maintain a healthy weight and reduce the risk of obesity-related diseases.",
-        "benefit2": "Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood.",
-        "benefit3": "Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing for more productive days and improved overall quality of life."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```json\n{\n    \"benefit1\": \"Regular exercise can help maintain a healthy weight and reduce the risk of obesity-related diseases.\",\n    \"benefit2\": \"Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood.\",\n    \"benefit3\": \"Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing for more productive days and improved overall quality of life.\"\n}\n```"
-    },
-    {
-      "success": true,
-      "data": {
-        "benefit1": "Exercise helps maintain a healthy weight by burning calories and building muscle mass.",
-        "benefit2": "Regular physical activity has been shown to reduce symptoms of anxiety and depression, as well as improve overall mental health by releasing endorphins, also known as 'feel-good' hormones.",
-        "benefit3": "Exercise can increase energy levels by strengthening the body's cardiovascular system and reducing fatigue, allowing individuals to tackle daily tasks with more vigor and enthusiasm."
-      },
-      "error_type": null,
-      "error_detail": null,
-      "raw_response": "```\n{\n    \"benefit1\": \"Exercise helps maintain a healthy weight by burning calories and building muscle mass.\",\n    \"benefit2\": \"Regular physical activity has been shown to reduce symptoms of anxiety and depression, as well as improve overall mental health by releasing endorphins, also known as 'feel-good' hormones.\",\n    \"benefit3\": \"Exercise can increase energy levels by strengthening the body's cardiovascular system and reducing fatigue, allowing individuals to tackle daily tasks with more vigor and enthusiasm.\"\n}\n```"
+      "raw_response": "{\n    \"benefit1\": \"Regular exercise can improve cardiovascular health by strengthening the heart and increasing blood flow to the muscles.\",\n    \"benefit2\": \"Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance cognitive function, thereby contributing to overall mental health.\",\n    \"benefit3\": \"Staying physically active can increase energy levels and improve sleep quality, allowing individuals to tackle daily tasks and responsibilities with more vitality and enthusiasm.\"\n}"
     }
   ],
   "numbers": [
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 47,\n  \"num2\": 91,\n  \"num3\": 13\n}"
+      "success": true,
+      "data": {
+        "num1": 74,
+        "num2": 23,
+        "num3": 91
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"num1\": 74,\n  \"num2\": 23,\n  \"num3\": 91\n}\n```"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
+      "success": true,
+      "data": {
+        "num1": 53,
+        "num2": 91,
+        "num3": 14
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 53,\n  \"num2\": 91,\n  \"num3\": 14\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 43,\n  \"num2\": 91,\n  \"num3\": 13\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "```json\n{\n    \"num1\": 42,\n    \"num2\": 91,\n    \"num3\": 13\n}\n```"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "```json\n{\n  \"num1\": 23,\n  \"num2\": 91,\n  \"num3\": 42\n}\n```"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 42,\n  \"num2\": 91,\n  \"num3\": 13\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 43,\n  \"num2\": 91,\n  \"num3\": 13\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 43,\n  \"num2\": 91,\n  \"num3\": 13\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\"num1\": 53, \"num2\": 91, \"num3\": 14}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 45,\n  \"num2\": 93,\n  \"num3\": 17\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 42,\n  \"num2\": 91,\n  \"num3\": 13\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "num1": 23,
+        "num2": 91,
+        "num3": 14
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\"num1\": 23, \"num2\": 91, \"num3\": 14}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 85,\n  \"num2\": 53,\n  \"num3\": 27\n}"
+      "success": true,
+      "data": {
+        "num1": 53,
+        "num2": 14,
+        "num3": 87
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 53,\n  \"num2\": 14,\n  \"num3\": 87\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"num1\": 43,\n  \"num2\": 91,\n  \"num3\": 13\n}"
+      "success": true,
+      "data": {
+        "num1": 43,
+        "num2": 91,
+        "num3": 13
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"num1\": 43,\n  \"num2\": 91,\n  \"num3\": 13\n}\n```"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n    \"num1\": 43,\n    \"num2\": 91,\n    \"num3\": 13\n}"
+      "success": true,
+      "data": {
+        "num1": 14,
+        "num2": 73,
+        "num3": 28
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 47,
+        "num2": 91,
+        "num3": 13
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 47, \"num2\": 91, \"num3\": 13}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 73,
+        "num2": 28,
+        "num3": 42
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"num1\": 73,\n  \"num2\": 28,\n  \"num3\": 42\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 53,
+        "num2": 91,
+        "num3": 17
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 53, \"num2\": 91, \"num3\": 17}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 67,
+        "num2": 13,
+        "num3": 91
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 67, \"num2\": 13, \"num3\": 91}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 14,
+        "num2": 73,
+        "num3": 28
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 14,\n  \"num2\": 73,\n  \"num3\": 28\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 42,
+        "num2": 91,
+        "num3": 4
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 42,\n  \"num2\": 91,\n  \"num3\": 4\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 21,
+        "num2": 73,
+        "num3": 41
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\":21,\"num2\":73,\"num3\":41}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 14,
+        "num2": 73,
+        "num3": 28
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 14, \"num2\": 73, \"num3\": 28}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 42,
+        "num2": 91,
+        "num3": 13
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 42, \"num2\": 91, \"num3\": 13}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 75,
+        "num2": 32,
+        "num3": 91
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 75,\n  \"num2\": 32,\n  \"num3\": 91\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 43,
+        "num2": 91,
+        "num3": 13
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 43, \"num2\": 91, \"num3\": 13}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 14,
+        "num2": 73,
+        "num3": 28
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 14, \"num2\": 73, \"num3\": 28}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 74,
+        "num2": 28,
+        "num3": 42
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\"num1\": 74, \"num2\": 28, \"num3\": 42}"
+    },
+    {
+      "success": true,
+      "data": {
+        "num1": 13,
+        "num2": 78,
+        "num3": 42
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"num1\": 13,\n  \"num2\": 78,\n  \"num3\": 42\n}"
     }
   ],
   "cities": [
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n    \"city1\": \"Tokyo\",\n    \"city2\": \"Delhi\",\n    \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "```json\n{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}\n```"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\"city1\": \"Tokyo\", \"city2\": \"Delhi\", \"city3\": \"Shanghai\"}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Shanghai",
+        "city3": "Mumbai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Shanghai\",\n  \"city3\": \"Mumbai\"\n}\n```"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\"city1\": \"Tokyo\", \"city2\": \"Delhi\", \"city3\": \"Shenzhen\"}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n    \"city1\": \"Tokyo\",\n    \"city2\": \"Delhi\",\n    \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "```json\n{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}\n```"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n    \"city1\": \"Tokyo\",\n    \"city2\": \"Delhi\",\n    \"city3\": \"Shanghai\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```\n{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     },
     {
       "success": false,
       "data": null,
       "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "error_detail": "Failed to parse MajorCities from completion {\"description\": \"Structured format for major cities\", \"properties\": {\"city1\": {\"description\": \"Name of a major global city, preferably one of the top 10 by population\", \"maxLength\": 50, \"minLength\": 2, \"title\": \"City1\", \"type\": \"string\"}, \"city2\": {\"description\": \"Name of a different major global city, not repeating the first city\", \"maxLength\": 50, \"minLength\": 2, \"title\": \"City2\", \"type\": \"string\"}, \"city3\": {\"description\": \"Name of another different major global city, not repeating previous cities\", \"maxLength\": 50, \"minLength\": 2, \"title\": \"City3\", \"type\": \"string\"}}, \"required\": [\"city1\", \"city2\", \"city3\"], \"city1\": [\"Tokyo\"], \"city2\": [\"Delhi\"], \"city3\": [\"Shanghai\"]}. Got: 3 validation errors for MajorCities\ncity1\n  Input should be a valid string [type=string_type, input_value=['Tokyo'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_type\ncity2\n  Input should be a valid string [type=string_type, input_value=['Delhi'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_type\ncity3\n  Input should be a valid string [type=string_type, input_value=['Shanghai'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.9/v/string_type\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/OUTPUT_PARSING_FAILURE",
+      "raw_response": "```json\n{\n  \"description\": \"Structured format for major cities\",\n  \"properties\": {\n    \"city1\": {\n      \"description\": \"Name of a major global city, preferably one of the top 10 by population\",\n      \"maxLength\": 50,\n      \"minLength\": 2,\n      \"title\": \"City1\",\n      \"type\": \"string\"\n    },\n    \"city2\": {\n      \"description\": \"Name of a different major global city, not repeating the first city\",\n      \"maxLength\": 50,\n      \"minLength\": 2,\n      \"title\": \"City2\",\n      \"type\": \"string\"\n    },\n    \"city3\": {\n      \"description\": \"Name of another different major global city, not repeating previous cities\",\n      \"maxLength\": 50,\n      \"minLength\": 2,\n      \"title\": \"City3\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\"city1\", \"city2\", \"city3\"],\n  \"city1\": [\"Tokyo\"],\n  \"city2\": [\"Delhi\"],\n  \"city3\": [\"Shanghai\"]\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "```json\n{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}\n```"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
+      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
+    },
+    {
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "```\n{\"city1\": \"Tokyo\", \"city2\": \"Delhi\", \"city3\": \"Shanghai\"}\n```"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     },
     {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
-      "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
-    },
-    {
-      "success": false,
-      "data": null,
-      "error_type": "other_error",
-      "error_detail": "argument of type 'pydantic_core._pydantic_core.ValidationInfo' is not iterable",
+      "success": true,
+      "data": {
+        "city1": "Tokyo",
+        "city2": "Delhi",
+        "city3": "Shanghai"
+      },
+      "error_type": null,
+      "error_detail": null,
       "raw_response": "{\n  \"city1\": \"Tokyo\",\n  \"city2\": \"Delhi\",\n  \"city3\": \"Shanghai\"\n}"
     }
   ]

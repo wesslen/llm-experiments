@@ -3,89 +3,149 @@ Structured Output Non-Determinism Experiment Summary
 
 Experiment: exercise
 Total attempts: 20
-Successful responses: 13
-Error rate: 35.00%
+Successful responses: 11
+Error rate: 45.00%
 
 Error Analysis:
-  other_error: 7 occurrences
+  other_error: 9 occurrences
 
-Unique successful responses: 13
+Unique successful responses: 11
 
 Field Analysis:
 
 benefit1:
-  Unique values: 13
-  Entropy: 2.565
+  Unique values: 11
+  Entropy: 2.398
   Value frequencies:
-    Regular exercise can help maintain a healthy weight and reduce the risk of obesity-related diseases.: 1
-    Exercise can improve cardiovascular health by strengthening the heart and lungs, increasing stamina, and reducing the risk of heart disease.: 1
-    Regular aerobic exercise can lower resting blood pressure and reduce the risk of heart disease.: 1
-    Regular exercise can lower blood pressure and reduce the risk of heart disease by strengthening the heart and improving circulation.: 1
-    Exercise reduces blood pressure and risk of heart disease, strengthening the cardiovascular system.: 1
-    Regular exercise can lower blood pressure, reduce the risk of heart disease, and improve overall cardiovascular health.: 1
-    Regular exercise can improve cardiovascular health by reducing the risk of heart disease and lowering blood pressure.: 1
-    Exercise helps maintain a healthy weight by burning calories and building muscle mass.: 1
-    Reduces the risk of chronic diseases such as heart disease, diabetes, and certain types of cancer by strengthening the cardiovascular system and improving insulin sensitivity: 1
-    Regular exercise helps to strengthen your cardiovascular system, improving circulation and lowering the risk of heart disease.: 1
-    Exercise can help reduce obesity and lower the risk of chronic diseases, such as diabetes and heart disease.: 1
-    Regular exercise can help you maintain a healthy weight and reduce the risk of chronic diseases such as diabetes, cardiovascular disease, and certain types of cancer.: 1
-    Regular exercise can improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease, and increasing overall physical fitness.: 1
+    Regular exercise can strengthen bones and muscles, reducing the risk of osteoporosis and injury.: 1
+    Regular exercise can help improve cardiovascular health by reducing blood pressure, increasing circulation, and strengthening the heart.: 1
+    Exercise strengthens muscles and bones, improving physical function and reducing the risk of injury and illness.: 1
+    Regular exercise can improve cardiovascular health by strengthening the heart and lungs, increasing endurance, and reducing the risk of heart disease.: 1
+    Improved cardiovascular health, lowering the risk of heart disease and stroke: 1
+    Improved cardiovascular health, reducing the risk of heart disease and stroke.: 1
+    Regular physical exercise has been shown to reduce the risk of heart disease, type 2 diabetes, and certain types of cancer.: 1
+    Regular exercise can strengthen the heart and lungs, improving cardiovascular health and reducing the risk of heart disease and stroke.: 1
+    Regular exercise can improve cardiovascular health by strengthening the heart and increasing blood flow to the muscles.: 1
+    Enhanced cardiovascular health, allowing the heart to pumping more efficiently and reducing the risk of heart disease: 1
+    Regular exercise helps improve cardiovascular health by strengthening the heart and lungs, reducing the risk of heart disease, and increasing overall endurance.: 1
 
 benefit2:
-  Unique values: 12
-  Entropy: 2.458
+  Unique values: 11
+  Entropy: 2.398
   Value frequencies:
-    Exercise reduces symptoms of anxiety and depression, improves mood, and enhances cognitive function, promoting better mental health.: 1
-    Exercise has been shown to reduce symptoms of anxiety and depression by promoting the release of endorphins, which can help improve mood and overall mental health.: 1
-    Regular exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, improving mood, and enhancing overall mental well-being.: 1
-    Regular physical activity has been shown to reduce symptoms of anxiety and depression, as well as improve overall mental health by releasing endorphins, also known as 'feel-good' hormones.: 1
-    Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.: 2
-    Reduces symptoms of anxiety and depression by releasing endorphins, improving mood, and enhancing cognitive function, thereby promoting mental health and well-being: 1
-    Regular physical activity has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood, self-esteem, and overall sense of well-being.: 1
-    Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood.: 1
-    Regular exercise can help alleviate symptoms of anxiety and depression by releasing endorphins and improving mood regulation, promoting better mental health and overall well-being.: 1
-    Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins, also known as 'feel-good' hormones.: 1
-    Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins and improving mood.: 1
-    Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression, and improving mood and overall mental well-being.: 1
+    Physical activity can serve as an effective therapy for mental health conditions, such as depression and anxiety, by improving mood and reducing stress.: 1
+    Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression by releasing endorphins and promoting relaxation.: 1
+    Enhanced mental health through reduced stress, anxiety, and symptoms of depression, leading to improved mood and cognitive function: 1
+    Physical activity has been shown to have a positive effect on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.: 1
+    Improved mental health by reducing symptoms of anxiety and depression through the release of endorphins and other neurotransmitters: 1
+    Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance cognitive function, thereby contributing to overall mental health.: 1
+    Exercise has a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing overall cognitive function.: 1
+    Exercise has been shown to have a positive impact on mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function.: 1
+    Exercise has been shown to effectively manage stress and anxiety by releasing endorphins, improving sleep quality, and enhancing overall mental well-being.: 1
+    Regular exercise has been shown to reduce symptoms of anxiety and depression, improving overall mental health and well-being.: 1
+    Regular exercise reduces symptoms of anxiety and depression, improves mood, and enhances cognitive function, supporting overall mental well-being.: 1
 
 benefit3:
-  Unique values: 13
-  Entropy: 2.565
+  Unique values: 11
+  Entropy: 2.398
   Value frequencies:
-    Incorporating physical activity into your daily routine can increase energy levels and reduce fatigue, allowing you to tackle daily tasks more efficiently and effectively.: 1
-    Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing for more productivity and a better overall quality of life.: 1
-    Exercise increases energy levels, allowing for more productivity and better work-life balance, and even improves sleep quality.: 1
-    Exercise can increase energy levels and reduce fatigue by improving sleep quality, increasing the release of energizing hormones like endorphins, and boosting productivity and motivation.: 1
-    Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing you to tackle daily tasks with more enthusiasm and productivity.: 1
-    Provides a natural energy boost and improves sleep quality by regulating bodily rhythms, leading to increased energy levels and enhanced overall quality of life: 1
-    Exercise can increase energy levels and reduce fatigue by improving sleep quality, reducing stress, and boosting metabolism.: 1
-    Exercise can increase energy levels by strengthening the body's cardiovascular system and reducing fatigue, allowing individuals to tackle daily tasks with more vigor and enthusiasm.: 1
-    Exercise can increase energy levels and reduce fatigue by improving sleep, boosting the immune system, and releasing endorphins, also known as "feel-good" hormones.: 1
-    Engaging in regular physical activity can boost energy levels and reduce fatigue, making it easier to tackle daily tasks and activities.: 1
-    Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks and responsibilities with more vitality and enthusiasm.: 1
-    Engaging in regular physical activity can increase energy levels and reduce fatigue, allowing for more productive days and improved overall quality of life.: 1
-    Exercise can increase energy levels and boost productivity, allowing individuals to tackle daily tasks and maintain a healthy work-life balance.: 1
+    Increased physical activity can boost energy levels and improve quality of life by providing a sense of accomplishment and allowing individuals to tackle daily tasks with more enthusiasm.: 1
+    Exercise can increase energy levels and reduce fatigue, enabling individuals to tackle daily tasks with more enthusiasm and productivity.: 1
+    Engaging in physical activity can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks with more motivation and enthusiasm.: 1
+    Exercise can increase energy levels and reduce fatigue by improving sleep quality, boosting energy metabolism, and reducing stress levels.: 1
+    Increased energy levels, allowing for greater productivity and engagement in daily activities and hobbies: 1
+    Exercise can increase energy levels and reduce fatigue, allowing individuals to tackle daily tasks with more efficiency and productivity.: 1
+    Increased energy levels and improved sleep quality through regular physical activity: 1
+    Physical activity boosts energy levels, helping people feel more alert and productive throughout the day, while also promoting better sleep quality.: 1
+    Staying physically active can increase energy levels and improve sleep quality, allowing individuals to tackle daily tasks and responsibilities with more vitality and enthusiasm.: 1
+    Engaging in regular physical activity can give you more energy throughout the day, improve sleep quality, and increase productivity.: 1
+    Engaging in regular physical activity can increase energy levels and reduce fatigue, enabling individuals to tackle daily tasks with more vigor and accomplish more in less time.: 1
 
 ==================================================
 Experiment: numbers
 Total attempts: 20
-Successful responses: 0
-Error rate: 100.00%
+Successful responses: 20
+Error rate: 0.00%
 
-Error Analysis:
-  other_error: 20 occurrences
+Unique successful responses: 16
 
-Unique successful responses: 0
+Field Analysis:
+
+num1:
+  Unique values: 12
+  Entropy: 2.346
+  Value frequencies:
+    67: 1
+    73: 1
+    74: 2
+    43: 2
+    42: 2
+    75: 1
+    14: 4
+    47: 1
+    13: 1
+    53: 3
+    21: 1
+    23: 1
+
+num2:
+  Unique values: 8
+  Entropy: 1.692
+  Value frequencies:
+    32: 1
+    73: 5
+    13: 1
+    14: 1
+    78: 1
+    23: 1
+    91: 8
+    28: 2
+
+num3:
+  Unique values: 9
+  Entropy: 2.042
+  Value frequencies:
+    4: 1
+    41: 1
+    42: 3
+    13: 4
+    14: 2
+    17: 1
+    87: 1
+    91: 3
+    28: 4
 
 ==================================================
 Experiment: cities
 Total attempts: 20
-Successful responses: 0
-Error rate: 100.00%
+Successful responses: 19
+Error rate: 5.00%
 
 Error Analysis:
-  other_error: 20 occurrences
+  other_error: 1 occurrences
 
-Unique successful responses: 0
+Unique successful responses: 2
+
+Field Analysis:
+
+city1:
+  Unique values: 1
+  Entropy: 0.000
+  Value frequencies:
+    Tokyo: 19
+
+city2:
+  Unique values: 2
+  Entropy: 0.206
+  Value frequencies:
+    Delhi: 18
+    Shanghai: 1
+
+city3:
+  Unique values: 2
+  Entropy: 0.206
+  Value frequencies:
+    Mumbai: 1
+    Shanghai: 18
 
 ==================================================
