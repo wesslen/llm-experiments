@@ -1,0 +1,153 @@
+OpenAI Model Non-Determinism Experiment Summary
+============================================
+
+Prompt: What are three key benefits of exercise? Format response as JSON with keys: benefit1, benefit2, benefit3
+Total responses: 20
+Unique responses: 20
+
+Field Analysis:
+
+benefit1:
+  Unique values: 18
+  Entropy: 2.831
+  Value frequencies:
+    Weight Management and Body Composition: 1
+    Improves Mental Health and Reduces Stress: 1
+    Improved Physical Health: Regular exercise helps to maintain a healthy weight, reduce the risk of chronic diseases such as heart disease, diabetes, and some cancers.: 1
+    Improves physical health, reducing the risk of chronic diseases such as heart disease, diabetes, and some cancers: 1
+    Improved physical health, including reduced risk of chronic diseases such as heart disease, diabetes, and some cancers: 1
+    Improved physical health, including a reduced risk of chronic diseases such as heart disease, diabetes, and some cancers.: 1
+    Weight Management and Reduced Risk of Chronic Diseases: 3
+    Improved Mental Health: Exercise reduces stress, anxiety, and symptoms of depression by releasing endorphins, also known as 'feel-good' hormones.: 1
+    Improves Cardiovascular Health: 1
+    Improves cardiovascular health by reducing the risk of heart disease, high blood pressure, and stroke: 1
+    Weight Management: Regular exercise helps in maintaining a healthy weight, reducing the risk of obesity-related diseases.: 1
+    Improved Mental Health: Regular exercise has been shown to reduce stress and anxiety, improve mood, and even alleviate symptoms of depression.: 1
+    Weight Management and Improved Body Composition: 1
+    Improves mental health and reduces stress: 1
+    Improved Heart Health: Regular exercise can help lower blood pressure, increase circulation, and reduce the risk of heart disease.: 1
+    Weight Management - Regular exercise helps with weight loss and maintenance, reducing the risk of obesity-related diseases.: 1
+    Improves Physical Health: Regular exercise helps to reduce the risk of chronic diseases such as heart disease, diabetes, and some cancers, and improves overall physical fitness and well-being.: 1
+    Improves mental health and reduces stress and anxiety: 1
+
+benefit2:
+  Unique values: 19
+  Entropy: 2.926
+  Value frequencies:
+    Improved Mental Health and Reduced Risk of Depression and Anxiety: 1
+    Enhanced mental well-being, including reduced stress and anxiety, improved mood, and better sleep: 1
+    Mood Enhancement: Exercise releases endorphins, also known as 'feel-good' hormones, which can improve mood and reduce symptoms of anxiety and depression.: 1
+    Enhanced Mental Health: Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance cognitive function.: 1
+    Enhanced Cardiovascular Health and Reduced Risk of Chronic Diseases: 1
+    Weight Management: Exercise helps build muscle and increase metabolism, making it easier to maintain a healthy weight and reduce the risk of obesity-related diseases.: 1
+    Boosts Mental Health: Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance cognitive function.: 1
+    Weight Management: Regular physical activity helps maintain a healthy weight, reduces body fat, and improves body composition.: 1
+    Improved Mental Health and Reduced Stress: 1
+    Enhances mental health and well-being, reducing symptoms of anxiety and depression: 1
+    Increases physical strength, energy, and cardiovascular health: 1
+    Boosts mental health by reducing symptoms of anxiety and depression, improving mood, and enhancing cognitive function: 1
+    Enhanced mental health and wellbeing, including reduced stress levels and improved mood, due to the release of endorphins and other neurotransmitters.: 1
+    Increases Muscle Strength and Endurance: 1
+    Improved Mental Health and Mood: 2
+    Enhances physical health and reduces the risk of chronic diseases, such as heart disease, diabetes, and some cancers: 1
+    Weight Management: Exercise can help you lose weight, maintain weight loss, and improve overall body composition.: 1
+    Increases Energy Levels and Boosts Cardiovascular Health: 1
+    Improved Mental Health - Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance cognitive function.: 1
+
+benefit3:
+  Unique values: 19
+  Entropy: 2.926
+  Value frequencies:
+    Enhances physical fitness by increasing strength, flexibility, and endurance, leading to improved overall health and well-being: 1
+    Boosts Mental Health and Reduces Stress: 1
+    Increases Energy and Productivity: Regular physical activity can increase energy levels and enhance productivity, allowing individuals to tackle daily tasks and responsibilities with greater ease and efficiency.: 1
+    Increased Energy: Regular physical activity boosts energy levels and reduces fatigue, allowing individuals to perform daily tasks with more vigor and enthusiasm.: 1
+    Enhanced Mental Health: Exercise has been shown to reduce symptoms of anxiety and depression, improve mood, and enhance overall mental well-being.: 1
+    Increased Energy and Enhanced Physical Function: 1
+    Enhances cognitive function, including concentration and memory: 1
+    Increased energy levels and improved sleep quality, as regular exercise can help regulate sleep patterns and boost energy levels throughout the day.: 1
+    Promotes Weight Management and Supports Long-Term Health: 1
+    Improved Mental Health and Reduced Stress: 1
+    Increased energy levels and endurance, allowing for more daily activities and improved overall quality of life: 1
+    Boosts energy levels and improves sleep quality, leading to increased productivity and overall quality of life: 1
+    Increased Energy Levels: Regular physical activity can increase energy levels and reduce fatigue, making it easier to tackle daily tasks and activities.: 1
+    Increased Energy and Enhanced Cognitive Function: 2
+    Increased Energy: Exercise increases energy levels by improving cardiovascular health, reducing fatigue, and enhancing overall fitness.: 1
+    Increased Strength and Mobility: 1
+    Increased Energy and Productivity: Regular physical activity can boost energy levels and improve overall productivity, enabling individuals to tackle daily tasks with greater ease and efficiency.: 1
+    Increases energy levels and improves sleep quality: 1
+    Increased Energy Levels - Exercise can boost energy levels, reducing fatigue and improving overall physical and mental well-being.: 1
+
+==================================================
+Prompt: List three random numbers between 1-100. Format as JSON with keys: num1, num2, num3
+Total responses: 20
+Unique responses: 7
+
+Field Analysis:
+
+num1:
+  Unique values: 5
+  Entropy: 1.175
+  Value frequencies:
+    43: 3
+    14: 3
+    82: 1
+    83: 1
+    53: 12
+
+num2:
+  Unique values: 5
+  Entropy: 0.984
+  Value frequencies:
+    73: 3
+    41: 1
+    14: 1
+    91: 14
+    28: 1
+
+num3:
+  Unique values: 6
+  Entropy: 1.402
+  Value frequencies:
+    13: 4
+    14: 10
+    17: 1
+    81: 1
+    28: 3
+    62: 1
+
+==================================================
+Prompt: Name three major cities. Format as JSON with keys: city1, city2, city3
+Total responses: 20
+Unique responses: 9
+
+Field Analysis:
+
+city1:
+  Unique values: 3
+  Entropy: 0.886
+  Value frequencies:
+    New York: 13
+    Tokyo: 4
+    New York City: 3
+
+city2:
+  Unique values: 5
+  Entropy: 1.479
+  Value frequencies:
+    London: 6
+    Paris: 1
+    Tokyo: 6
+    Los Angeles: 3
+    New York: 4
+
+city3:
+  Unique values: 4
+  Entropy: 1.249
+  Value frequencies:
+    Chicago: 3
+    Paris: 2
+    Tokyo: 7
+    London: 8
+
+==================================================
