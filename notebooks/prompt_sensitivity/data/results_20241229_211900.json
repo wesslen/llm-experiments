@@ -1,0 +1,68 @@
+[
+  {
+    "variation_type": "original",
+    "prompt": "Write a short poem about the moon",
+    "response": "Luminous orb in darkened skies,\nCasting light on sleepy eyes.\nWaxing, waning, ever changing,\nCelestial beauty, so engaging.\nGuiding beacon, shining bright,\nGentle guardian of the night.",
+    "timestamp": "2024-12-29T21:18:14.415171"
+  },
+  {
+    "variation_type": "extra_space_start",
+    "prompt": " Write a short poem about the moon",
+    "response": "The moon, a gentle orb of light,\nIlluminates the darkest night.\nCasting shadows, long and deep, \nA silent guardian as we sleep.\n\nWaxing, waning, ever changing,\nThrough the sky, slowly ranging.\nMysterious and enchanting, she\nInspires dreams and poetry.",
+    "timestamp": "2024-12-29T21:18:18.170764"
+  },
+  {
+    "variation_type": "extra_space_end",
+    "prompt": "Write a short poem about the moon ",
+    "response": "Luminous orb in darkened sky,\nCasting light from way up high.\nCraters mark your silvery face,\nAs through the night you slowly trace.\nCelestial beacon, shining bright,\nFaithful friend to all each night.",
+    "timestamp": "2024-12-29T21:18:22.794736"
+  },
+  {
+    "variation_type": "double_space",
+    "prompt": "Write  a  short  poem  about  the  moon",
+    "response": "Luminous orb in darkened skies,\nCasting light on sleepy eyes.\nWaxing, waning, ever changing,\nCelestial beauty, so engaging.\nGuiding lost souls through the night,\nFaithful friend, a wondrous sight.\nMysteries held in your pale glow,\nLunar secrets we yearn to know.",
+    "timestamp": "2024-12-29T21:18:27.169288"
+  },
+  {
+    "variation_type": "add_period",
+    "prompt": "Write a short poem about the moon.",
+    "response": "The moon, a glowing orb on high,\nIlluminates the darkened sky.\nIts gentle light, a guiding beam,\nInspires poets to muse and dream.\nA celestial wonder, ever bright, \nTransforming dusk to enchanted night.",
+    "timestamp": "2024-12-29T21:18:30.704494"
+  },
+  {
+    "variation_type": "add_question",
+    "prompt": "Write a short poem about the moon?",
+    "response": "The moon, a gentle orb of light,\nIlluminates the darkest night.\nCasting shadows, long and deep, \nA silent guardian as we sleep.\n\nWaxing, waning, ever changing,\nThrough the sky, slowly ranging.\nMysterious and enchanting, she\nInspires dreams and poetry.\n\nWhether crescent, full or new,\nThe moon remains a wondrous view.\nGlowing bright or hiding shy,\nConstant presence in the sky.",
+    "timestamp": "2024-12-29T21:18:36.580908"
+  },
+  {
+    "variation_type": "add_exclamation",
+    "prompt": "Write a short poem about the moon!",
+    "response": "The moon, a glowing orb on high,\nCasting light across the sky.\nMysterious and ever bright,\nA beacon in the darkest night.\nWaxing, waning, through the weeks,\nPlaying hide and seek with peaks.\nCelestial wonder, always there,\nThe moon, a jewel for all to share.",
+    "timestamp": "2024-12-29T21:18:40.223211"
+  },
+  {
+    "variation_type": "all_caps",
+    "prompt": "WRITE A SHORT POEM ABOUT THE MOON",
+    "response": "Here's a short poem about the moon:\n\nLuminous orb in darkened sky,\nCasting light from way up high.  \nCraters mark your silvered face,\nAs through the night you slowly trace.\nFaithful friend of Earth below,\nIn phases waxing, waning go.\nCelestial beacon, shining bright,\nFair Luna, goddess of the night.\n\nThis short, simple poem uses rhyming couplets to paint a picture of the moon as it appears in the night sky. It touches on the moon's appearance, its phases, and its symbolic role as a nighttime presence and object of beauty and wonder.",
+    "timestamp": "2024-12-29T21:18:46.790347"
+  },
+  {
+    "variation_type": "all_lower",
+    "prompt": "write a short poem about the moon",
+    "response": "The moon, a gentle orb of light,\nIlluminates the darkest night.\nCasting shadows, long and deep, \nA silent guardian as we sleep.\n\nWaxing, waning, ever changing,\nThrough the sky, slowly ranging.\nMysterious and enchanting, she\nInspires dreams and poetry.",
+    "timestamp": "2024-12-29T21:18:50.514766"
+  },
+  {
+    "variation_type": "no_spaces",
+    "prompt": "Writeashortpoemaboutthemoon",
+    "response": "Here's a short poem about the moon:\n\nLuminous orb in darkened sky,\nCasting light from way up high.  \nCraters mark your silvered face,\nAs through heaven's arc you trace.\nFaithful friend of starry night,\nGentle beacon, shining bright.\n\nHow's that? I aimed to capture some key aspects of the moon - its luminous glow, the craters on its surface, the way it arcs across the night sky, and the sense of it being a comforting presence in the night. Feel free to let me know if you'd like me to modify or expand the poem in any way. I'm happy to keep working on it with you until you're satisfied.",
+    "timestamp": "2024-12-29T21:18:57.060904"
+  },
+  {
+    "variation_type": "extra_newline",
+    "prompt": "\nWrite a short poem about the moon\n",
+    "response": "The moon, a gentle orb of light,\nIlluminates the darkest night.\nCasting shadows, long and deep, \nA silent guardian as we sleep.\n\nWaxing, waning, ever changing,\nThrough the sky, slowly ranging.\nCelestial wonder, so serene,\nDraped in an ethereal sheen.",
+    "timestamp": "2024-12-29T21:19:00.946398"
+  }
+]
