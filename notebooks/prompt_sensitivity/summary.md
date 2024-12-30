@@ -37,7 +37,3 @@ The analysis revealed:
 - Suggests strong semantic understanding beyond surface text features
 - Helpful for understanding Claude's prompt processing behavior
 The full code and detailed analysis are available in the [Colab notebook](https://colab.research.google.com/github/wesslen/llm-experiments/blob/main/notebooks/prompt_sensitivity/claude.ipynb).
-
-_Future research could explore combining these insights - perhaps using likelihood-based metrics to automatically optimize prompt stability while maintaining output quality._
-
-The full code and detailed analysis are available in the [Colab notebook](https://colab.research.google.com/github/wesslen/llm-experiments/blob/main/notebooks/prompt_sensitivity/claude.ipynb).
