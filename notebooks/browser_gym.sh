@@ -205,7 +205,7 @@ class GeminiLLM:
     
     def __init__(
         self,
-        model_name: str = "gemini-2.0-flash-exp",
+        model_name: str = "gemini-2.0-flash",
         project_id: Optional[str] = None,
         location: str = "us-central1",
         temperature: float = 0.0,
@@ -307,7 +307,7 @@ class GeminiAgent:
     
     def __init__(
         self,
-        model_name: str = "gemini-2.0-flash-exp",
+        model_name: str = "gemini-2.0-flash",
         use_screenshot: bool = False,
         temperature: float = 0.0,
     ):
@@ -436,7 +436,7 @@ print(f"Location: {os.environ.get('VERTEX_AI_LOCATION')}")
 print()
 
 try:
-    llm = GeminiLLM(model_name="gemini-2.0-flash-exp")
+    llm = GeminiLLM(model_name="gemini-2.0-flash")
     
     # Test 1: Simple generation
     print("Test 1: Simple text generation")
