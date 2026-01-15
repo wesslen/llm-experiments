@@ -1,0 +1,14 @@
+[project]
+name = "gui-agent-adk"
+version = "0.1.0"
+description = "Minimal GUI agent using Google ADK + Playwright MCP"
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk>=1.0.0",
+    "mcp>=1.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
