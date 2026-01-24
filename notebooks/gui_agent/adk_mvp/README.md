@@ -20,7 +20,7 @@ npx --version
 
 ```bash
 # Set your Google API key
-export GOOGLE_API_KEY="your-key-here"
+export GEMINI_API_KEY="your-key-here"
 
 # Optional: change model (default: gemini-2.5-flash)
 export MODEL="gemini-2.0-flash"
