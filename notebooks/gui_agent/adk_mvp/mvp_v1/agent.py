@@ -78,6 +78,7 @@ def create_gui_agent():
                         command="npx",
                         args=["-y", "playwright-mcp@latest"],
                     ),
+                    timeout=120,  # 2 minutes for complex interactions
                 ),
                 # Optional: filter to specific tools
                 # tool_filter=["browser_navigate", "browser_snapshot", "browser_click", "browser_type", "browser_screenshot"]

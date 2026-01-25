@@ -84,6 +84,7 @@ async def create_agent():
                     command="npx",
                     args=["-y", "playwright-mcp@latest"],
                 ),
+                timeout=120,  # 2 minutes for complex interactions
             ),
         )
 
