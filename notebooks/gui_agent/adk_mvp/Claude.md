@@ -4,7 +4,7 @@
 
 Minimal viable Google ADK GUI Agent using Microsoft's Playwright MCP server for browser automation. This project provides a foundation for building GUI automation agents with test-driven development.
 
-**Status:** ✅ MVP v1 Complete (19/19 tests passing - 100%)
+**Status:** ✅ MVP v1 Complete + Enterprise Tests (25 total tests: 19 core + 6 enterprise)
 
 **Production Constraint:** Microsoft's `playwright-mcp` is the only approved MCP server for production use.
 
@@ -70,54 +70,61 @@ Minimal viable Google ADK GUI Agent using Microsoft's Playwright MCP server for 
 
 4. **Code Quality**
    - Resource leak fixes (proper MCP toolset cleanup)
-   - 10 tracked failure modes (7 controlled, 3 uncontrolled)
+   - 22 tracked failure modes (17 controlled, 5 uncontrolled)
    - Timeout controls (5 min task timeout, 50 iteration max)
    - Environment validation on startup
    - Type safety improvements
+   - Enterprise behavioral tests with mock services
 
-### Known Issues ⚠️
+### Active Challenges
 
-See [Failure Modes](#failure-modes) table for complete tracking.
+See [Unmitigated Failure Modes](#unmitigated-failure-modes--priorities) section for detailed prioritization.
 
-#### Recently Fixed
+**High Priority Uncontrolled Failures:**
+1. **API Quota Exhausted** - No retry/backoff, blocks functionality
+2. **Authentication Wall Handling** - No detection/guidance when login required
+3. **Enterprise Behavioral Gaps** - Need agent improvements based on new test results
 
-1. **MCP Request Timeout** (FIXED ✅ 2026-01-24)
-   - **Problem:** `test_search_wikipedia` timed out during multi-step interactions
-   - **Root Cause:** `StdioConnectionParams` missing `timeout` parameter (default 5s)
-   - **Fix Applied:** Added `timeout=120` (2 minutes) to all `McpToolset` instantiations
-   - **Files Modified:** `mvp_v1/run.py:87`, `mvp_v1/agent.py:80`, `tests/conftest.py:37`
-   - **References:** [google/adk-python#1463](https://github.com/google/adk-python/issues/1463), [#1086](https://github.com/google/adk-python/issues/1086)
+**Recently Resolved:**
+- ✅ MCP Request Timeout (2026-01-24) - Added 120s timeout for complex interactions
+- ✅ Basic behavioral test coverage - All 19 core tests passing
+- ✅ Enterprise test framework - 6 behavioral tests with mock services created
 
-#### Active Issues
+## Quick Start
 
-2. **API Quota Exhausted** (Uncontrolled, High Severity)
-   - Gemini API rate limits can cause test/runtime failures
-   - No automated retry or backoff mechanism
-   - **Workaround:** Wait for quota reset or use different API key
+```bash
+# 1. Navigate to project
+cd notebooks/gui_agent/adk_mvp
 
-3. **ADK Deprecation Warnings** (Uncontrolled, Low Severity)
-   - `MCPTool` class deprecated (should use `McpTool`)
-   - Experimental feature warnings for `BASE_AUTHENTICATED_TOOL`
-   - **Impact:** None currently, may break in future ADK versions
+# 2. Install dependencies
+uv sync
+
+# 3. Configure API key
+echo "GEMINI_API_KEY=your-key-here" > .env
+
+# 4. Run tests to verify setup
+uv run pytest tests/test_setup.py -v
+
+# 5. Try the agent
+python mvp_v1/run.py
+# or
+adk web
+```
 
 ## Setup
 
 ### Prerequisites
 
-```bash
-# System requirements
 - Python 3.12+
-- Node.js 18+
-- npm/npx
+- Node.js 18+ (for Playwright MCP)
 - Google Gemini API key
-```
 
 ### Installation
 
 ```bash
 cd notebooks/gui_agent/adk_mvp
 
-# Install dependencies with uv
+# Install with uv (recommended)
 uv sync
 
 # Or with pip
@@ -130,11 +137,11 @@ pip install -e .
 # Copy environment template
 cp .env.example .env
 
-# Edit .env and add your API key
+# Add your API key to .env
 GEMINI_API_KEY=your-actual-api-key-here
 
 # Optional: Override model (default: gemini-2.5-flash)
-# MODEL=gemini-2.0-flash
+MODEL=gemini-2.0-flash
 ```
 
 ## Usage
@@ -211,13 +218,17 @@ asyncio.run(run_automation())
 ### Run All Tests
 
 ```bash
-# All tests (19/19 passing - 100%)
+# Core tests (19/19 passing - 100%)
+uv run pytest tests/ -v --ignore=tests/behavioral_enterprise
+
+# All tests including enterprise (25 total)
 uv run pytest tests/ -v
 
-# Total: 19 tests
+# Total: 25 tests
 # - Setup: 10/10 ✅
 # - Tools: 6/6 ✅
-# - Behavioral: 3/3 ✅
+# - Behavioral (basic): 3/3 ✅
+# - Behavioral (enterprise): 6 (3 CRM + 3 Dashboard)
 ```
 
 ### Test Categories
@@ -229,8 +240,15 @@ uv run pytest tests/test_setup.py -v
 # Tool availability (6 tests)
 uv run pytest tests/test_tools.py -v
 
-# End-to-end behavioral (3 tests)
+# Basic behavioral tests (3 tests)
 uv run pytest tests/test_behavioral.py -v
+
+# Enterprise behavioral tests (6 tests)
+uv run pytest tests/behavioral_enterprise/ -v
+
+# By enterprise use case
+uv run pytest -m crm -v              # CRM Lead Entry (3 tests)
+uv run pytest -m dashboard -v        # Dashboard Monitoring (3 tests)
 ```
 
 ### Test Details
@@ -260,6 +278,16 @@ uv run pytest tests/test_behavioral.py -v
 - ✅ `test_search_wikipedia` - Wikipedia search (timeout after 60s)
 - ✅ `test_agent_error_handling` - Invalid URL handling
 
+**Enterprise Behavioral Tests** (`behavioral_enterprise/`):
+- CRM Lead Entry (3 tests):
+  - `test_crm_happy_path` - Create lead with all fields
+  - `test_crm_validation_error` - Handle missing required field
+  - `test_crm_duplicate_modal` - Detect duplicate contact modal
+- Dashboard Monitoring (3 tests):
+  - `test_dashboard_happy_path` - Extract metrics and apply thresholds
+  - `test_dashboard_ajax_delay` - Handle AJAX loading with wait strategies
+  - `test_dashboard_missing_metric` - Gracefully handle missing elements
+
 ## File Structure
 
 ```
@@ -271,6 +299,10 @@ notebooks/gui_agent/adk_mvp/
 ├── README.md                   # Project README
 ├── Claude.md                   # This file
 ├── main.py                     # Entry point (placeholder)
+│
+├── evaluations/                # ADK evaluation test definitions
+│   ├── crm_tests.evalset.json # CRM behavioral tests (3 cases)
+│   └── dashboard_tests.evalset.json # Dashboard tests (3 cases)
 │
 ├── mvp_v1/                     # Version 1 implementation
 │   ├── __init__.py
@@ -291,7 +323,15 @@ notebooks/gui_agent/adk_mvp/
     │                           # - test_session
     ├── test_setup.py           # Environment validation (10 tests)
     ├── test_tools.py           # Tool availability (6 tests)
-    └── test_behavioral.py      # Happy path scenarios (3 tests)
+    ├── test_behavioral.py      # Happy path scenarios (3 tests)
+    └── behavioral_enterprise/  # Enterprise behavioral tests (6 tests)
+        ├── __init__.py
+        ├── README.md           # Enterprise test documentation
+        ├── test_crm_lead_entry.py # CRM tests (3)
+        ├── test_dashboard_monitoring.py # Dashboard tests (3)
+        └── mocks/              # Mock web services
+            ├── mock_crm.html   # HubSpot simulator
+            └── mock_dashboard.html # Grafana simulator
 ```
 
 ## Key Implementation Details
@@ -361,18 +401,45 @@ async def run_task(task: str):
 
 Tracked failure modes for monitoring and prioritization during updates:
 
-| Failure Mode | Description | Controlled | Severity |
-|--------------|-------------|------------|----------|
-| MCP Request Timeout | MCP calls timeout on complex interactions | Controlled (test + 120s config) | High |
-| API Quota Exhausted | Gemini API rate limit exceeded | Uncontrolled | High |
-| Missing API Key | GEMINI_API_KEY not set or invalid | Controlled (test + validation) | High |
-| MCP Toolset Init Failure | Playwright MCP server fails to start | Controlled (test) | High |
-| Invalid URL Navigation | Agent navigates to non-existent domain | Controlled (test) | Medium |
-| Task Timeout | Agent exceeds 5 min execution limit | Controlled (300s config) | Medium |
-| Resource Leak | MCP process not terminated properly | Controlled (finally blocks) | Medium |
-| Max Iterations Exceeded | Agent hits 50 iteration loop limit | Controlled (config) | Medium |
-| ADK Deprecation | Using deprecated MCPTool class | Uncontrolled (warnings) | Low |
-| Keyboard Interrupt | User cancels during execution | Controlled (handler) | Low |
+#### Core Failure Modes (Original 10)
+
+| # | Failure Mode | Description | Controlled | Severity |
+|---|--------------|-------------|------------|----------|
+| 1 | MCP Request Timeout | MCP calls timeout on complex interactions | Controlled (test + 120s config) | High |
+| 2 | API Quota Exhausted | Gemini API rate limit exceeded | Uncontrolled | High |
+| 3 | Missing API Key | GEMINI_API_KEY not set or invalid | Controlled (test + validation) | High |
+| 4 | MCP Toolset Init Failure | Playwright MCP server fails to start | Controlled (test) | High |
+| 5 | Invalid URL Navigation | Agent navigates to non-existent domain | Controlled (test) | Medium |
+| 6 | Task Timeout | Agent exceeds 5 min execution limit | Controlled (300s config) | Medium |
+| 7 | Resource Leak | MCP process not terminated properly | Controlled (finally blocks) | Medium |
+| 8 | Max Iterations Exceeded | Agent hits 50 iteration loop limit | Controlled (config) | Medium |
+| 9 | ADK Deprecation | Using deprecated MCPTool class | Uncontrolled (warnings) | Low |
+| 10 | Keyboard Interrupt | User cancels during execution | Controlled (handler) | Low |
+
+#### Enterprise Failure Modes (New - 12 additional)
+
+| # | Failure Mode | Description | Test Coverage | Severity |
+|---|--------------|-------------|---------------|----------|
+| 11 | Form Validation Error Detection | Agent fails to detect inline validation errors | CRM validation test | High |
+| 12 | Modal Dialog Perception | Agent doesn't recognize modal overlays | CRM duplicate test | High |
+| 13 | Dynamic Content Wait Failure | Agent interacts before AJAX content loads | Dashboard AJAX test | High |
+| 14 | Missing Element Graceful Failure | Agent crashes instead of reporting missing elements | Dashboard missing metric test | Medium |
+| 15 | Data Extraction Accuracy | Agent misreads/misinterprets displayed values | Dashboard happy path | High |
+| 16 | Threshold Logic Errors | Agent fails to correctly apply comparison logic | Dashboard happy path | Medium |
+| 17 | Multi-Step Form State Loss | Agent loses context between form pages | CRM happy path | Medium |
+| 18 | Dropdown/Select Element Handling | Agent can't interact with custom dropdowns | CRM happy path | Medium |
+| 19 | Wait Strategy Selection | Agent uses fixed delays instead of smart waits | Dashboard AJAX test | Medium |
+| 20 | Error Communication Clarity | Agent doesn't clearly communicate blockers to user | CRM validation test | Medium |
+| 21 | Success Verification | Agent reports success without verifying completion | Both happy paths | Medium |
+| 22 | Authentication Wall Handling | Agent doesn't detect/communicate auth requirements | Uncontrolled (future test) | High |
+
+**Summary:**
+- **Total Tracked:** 22 failure modes
+- **Controlled:** 17 (77%)
+- **Uncontrolled:** 5 (23%)
+- **High Severity:** 9
+- **Medium Severity:** 12
+- **Low Severity:** 1
 
 **Legend:**
 - **Controlled**: Failure mode has automated test coverage or explicit handling
@@ -402,69 +469,94 @@ python_files = "test_*.py"
 python_functions = "test_*"
 ```
 
-## Next Steps / Future Work
+## Unmitigated Failure Modes & Priorities
 
-### Immediate (v1 fixes)
+### High Priority (Uncontrolled High-Severity Failures)
 
-1. **Fix Wikipedia test timeout**
-   - Increase MCP request timeout from 5s
-   - Add retry logic for execute-code operations
-   - Better error messages for MCP timeouts
+1. **API Quota Exhausted** (Failure Mode #2)
+   - **Status:** Uncontrolled
+   - **Impact:** Blocks all agent functionality when Gemini API rate limit exceeded
+   - **Next Steps:**
+     - Implement exponential backoff retry logic
+     - Add quota monitoring and alerting
+     - Graceful degradation with clear user messaging
 
-2. **Address deprecation warnings**
-   - Migrate from `MCPTool` to `McpTool`
-   - Handle experimental feature flags properly
+2. **Authentication Wall Handling** (Failure Mode #22)
+   - **Status:** Uncontrolled (no test coverage)
+   - **Impact:** Agent cannot proceed with tasks requiring login
+   - **Next Steps:**
+     - Add enterprise test for auth wall detection
+     - Implement auth wall recognition patterns
+     - Provide clear guidance to user (credentials needed, session required)
 
-### v2 Enhancements
+3. **Enterprise Failure Modes** (11-21)
+   - **Status:** Tests created but agent improvements needed
+   - **Impact:** Form validation, modal detection, data extraction may fail
+   - **Next Steps:**
+     - Run enterprise tests to establish baseline
+     - Analyze failure patterns
+     - Improve agent instructions for wait strategies, error detection
 
-1. **Advanced Interactions**
-   - Form filling helpers
-   - Multi-page workflows
-   - Authentication handling
-   - File uploads/downloads
+### Medium Priority
 
-2. **Improved Observability**
-   - Structured logging
-   - Tool call tracing
-   - Screenshot artifacts on failure
-   - Performance metrics
+1. **ADK Deprecation Warnings** (Failure Mode #9)
+   - **Status:** Uncontrolled, Low Severity
+   - **Impact:** May break in future ADK versions
+   - **Next Steps:** Migrate from `MCPTool` to `McpTool` when convenient
 
-3. **Testing Improvements**
-   - Mock MCP responses for faster unit tests
-   - More complex interaction scenarios
-   - Visual regression testing
-   - Performance benchmarks
+## Future Enhancements
 
-4. **Agent Improvements**
-   - Better error recovery
-   - State persistence between tasks
-   - Multi-tab management
-   - Wait strategies for dynamic content
+### v2: Enterprise Readiness
 
-5. **Tool Filtering**
-   - Enable optional tool_filter in McpToolset
-   - Reduce API calls by limiting available tools
-   - Tool-specific configurations
+1. **Address Uncontrolled Failure Modes**
+   - Implement API quota retry/backoff logic (Failure Mode #2)
+   - Add authentication wall detection and handling (Failure Mode #22)
+   - Improve agent instructions based on enterprise test results
 
-### v3+ (Production Ready)
+2. **Advanced Interactions** (Based on Enterprise Test Insights)
+   - Smart wait strategies for AJAX/dynamic content (not fixed delays)
+   - Modal and overlay detection improvements
+   - Form validation error parsing and recovery
+   - Multi-page workflow state management
+   - File upload/download support
+
+3. **Enhanced Error Recovery**
+   - Better error message communication to users
+   - Graceful degradation when elements missing
+   - Success verification before reporting completion
+   - Retry logic for transient failures
+
+4. **Testing Expansion**
+   - Add 7 more enterprise edge cases (auth wall, network errors, file uploads)
+   - Real service integration tests (HubSpot, Grafana with credentials)
+   - Visual regression testing (screenshot comparisons)
+   - Performance benchmarking suite
+
+5. **Observability & Debugging**
+   - Structured logging with trace IDs
+   - Screenshot artifacts on test failures
+   - Tool call execution metrics
+   - Cost tracking per task
+
+### v3: Production Scale
 
 1. **Robustness**
-   - Retry mechanisms
-   - Circuit breakers
-   - Rate limiting
-   - Health checks
+   - Circuit breakers for API failures
+   - Health checks and self-healing
+   - Comprehensive retry mechanisms
+   - Fallback strategies
 
 2. **Scalability**
-   - Parallel browser sessions
-   - Task queuing
+   - Parallel browser session management
+   - Task queuing and scheduling
    - Resource pooling
-   - Horizontal scaling
+   - Horizontal scaling support
 
 3. **Monitoring**
-   - Metrics dashboard
-   - Error tracking (Sentry, etc.)
-   - Cost tracking
-   - Usage analytics
+   - Real-time metrics dashboard
+   - Error tracking (Sentry integration)
+   - API cost monitoring
+   - Usage analytics and reporting
 
 ## Troubleshooting
 
@@ -526,29 +618,46 @@ uv run pytest tests/ --pdb
 
 ### Related Files
 
-- [README.md](README.md) - Project README
+- [README.md](README.md) - Quick start guide
+- [ENTERPRISE_TESTS_SUMMARY.md](ENTERPRISE_TESTS_SUMMARY.md) - Enterprise test implementation details
+- [tests/behavioral_enterprise/README.md](tests/behavioral_enterprise/README.md) - Enterprise test usage guide
 - [.env.example](.env.example) - Environment template
 - [pyproject.toml](pyproject.toml) - Dependencies and config
 
 ## Change Log
 
-### 2026-01-24 (Update) - MCP Timeout Fix & Failure Modes
+### 2026-01-24 (Update) - Enterprise Behavioral Tests
 
-**Fixed:**
-- MCP request timeout issue (added `timeout=120` to all `McpToolset` instances)
-- All 19 tests now passing (100% pass rate)
-- Wikipedia search test now completes successfully
+**Added:**
+- Enterprise behavioral test suite (6 tests across 2 use cases)
+- CRM Lead Entry tests (3): form validation, modal detection, multi-step workflows
+- Dashboard Monitoring tests (3): data extraction, AJAX handling, threshold logic
+- Mock web services (mock_crm.html, mock_dashboard.html)
+- ADK evaluation definitions (crm_tests.evalset.json, dashboard_tests.evalset.json)
+- Pytest markers for enterprise tests (enterprise, crm, dashboard)
+- 12 new tracked failure modes (total: 22, 77% controlled)
 
 **Changed:**
-- Reframed "Error Handling" to "Failure Modes" with tracking table
-- Added 10 tracked failure modes (7 controlled, 3 uncontrolled)
-- Updated README.md with test instructions and project structure
-- Updated Known Issues section with Recently Fixed and Active Issues
+- Reorganized documentation to focus on unmitigated failures and future work
+- Removed completed "Fix Wikipedia timeout" from Next Steps
+- Updated README.md with enterprise test information
+- Updated file structure to include evaluations/ folder
 
 **Documentation:**
-- Added failure mode severity tracking (High/Medium/Low)
-- Added controlled vs uncontrolled classification
-- Updated test suite documentation
+- Added ENTERPRISE_TESTS_SUMMARY.md
+- Added behavioral_enterprise/README.md
+- Updated failure mode tracking (22 total, 17 controlled, 5 uncontrolled)
+- Reorganized Next Steps to "Unmitigated Failure Modes & Priorities"
+
+### 2026-01-24 - MCP Timeout Fix & Failure Modes
+
+**Fixed:**
+- MCP request timeout (added `timeout=120` to all `McpToolset` instances)
+- All 19 core tests now passing (100%)
+
+**Changed:**
+- Added 10 tracked failure modes (7 controlled, 3 uncontrolled)
+- Reframed error handling to failure mode tracking
 
 ### 2026-01-24 - MVP v1 Complete
 

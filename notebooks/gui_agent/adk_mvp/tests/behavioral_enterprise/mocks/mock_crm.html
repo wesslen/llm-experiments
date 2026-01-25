@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock CRM - Contact Management</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        button.primary {
+            background-color: #ff7a59;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        button.primary:hover {
+            background-color: #ff6644;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #33475b;
+            font-size: 14px;
+        }
+        label.required::after {
+            content: " *";
+            color: #f2545b;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd6e2;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #ff7a59;
+        }
+        .error-message {
+            color: #f2545b;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+        .error-message.visible {
+            display: block;
+        }
+        input.error {
+            border-color: #f2545b;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .modal.visible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+        }
+        .modal-header {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #33475b;
+        }
+        .modal-body {
+            color: #516f90;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        button.secondary {
+            background-color: white;
+            color: #516f90;
+            border: 1px solid #cbd6e2;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        button.secondary:hover {
+            background-color: #f5f8fa;
+        }
+        .success-message {
+            background-color: #eaf7ee;
+            color: #0e6245;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .success-message.visible {
+            display: block;
+        }
+        #contact-form {
+            display: none;
+        }
+        #contact-form.visible {
+            display: block;
+        }
+        .contacts-list {
+            margin-top: 30px;
+        }
+        .contact-item {
+            border: 1px solid #cbd6e2;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .contact-name {
+            font-weight: 600;
+            color: #33475b;
+        }
+        .contact-details {
+            color: #516f90;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contacts</h1>
+        <p class="subtitle">Manage your customer relationships</p>
+
+        <button class="primary" id="create-contact-btn">Create contact</button>
+
+        <div id="success-notification" class="success-message">
+            <strong>Success!</strong> Contact created successfully.
+        </div>
+
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="firstname" class="required">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+                <div class="error-message" id="firstname-error">First name is required</div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname" class="required">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+                <div class="error-message" id="lastname-error">Last name is required</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="email-error">Email is required and must be valid</div>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="jobtitle">Job Title</label>
+                <input type="text" id="jobtitle" name="jobtitle">
+            </div>
+
+            <div class="form-group">
+                <label for="lead_status">Lead Status</label>
+                <select id="lead_status" name="lead_status">
+                    <option value="">Select status...</option>
+                    <option value="NEW">New</option>
+                    <option value="OPEN">Open</option>
+                    <option value="IN_PROGRESS">In Progress</option>
+                    <option value="OPEN_DEAL">Open Deal</option>
+                    <option value="UNQUALIFIED">Unqualified</option>
+                    <option value="ATTEMPTED_TO_CONTACT">Attempted to Contact</option>
+                    <option value="CONNECTED">Connected</option>
+                    <option value="BAD_TIMING">Bad Timing</option>
+                </select>
+            </div>
+
+            <button type="submit" class="primary">Save contact</button>
+            <button type="button" class="secondary" id="cancel-btn">Cancel</button>
+        </form>
+
+        <div class="contacts-list">
+            <h2>Existing Contacts</h2>
+            <div class="contact-item">
+                <div class="contact-name">Sarah Johnson</div>
+                <div class="contact-details">
+                    sarah.johnson@techcorp.com | TechCorp Industries | VP of Engineering
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Duplicate Detection Modal -->
+    <div id="duplicate-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Possible duplicate contact found</div>
+            <div class="modal-body">
+                <p>A contact with this email address already exists:</p>
+                <div class="contact-item" style="margin: 15px 0;">
+                    <div class="contact-name" id="duplicate-contact-name"></div>
+                    <div class="contact-details" id="duplicate-contact-details"></div>
+                </div>
+                <p>Would you like to view the existing contact or create a new one anyway?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary" id="view-existing-btn">View existing contact</button>
+                <button class="primary" id="create-anyway-btn">Create anyway</button>
+                <button class="secondary" id="cancel-duplicate-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Existing contacts database (for duplicate detection)
+        const existingContacts = [
+            {
+                email: 'sarah.johnson@techcorp.com',
+                firstname: 'Sarah',
+                lastname: 'Johnson',
+                company: 'TechCorp Industries',
+                jobtitle: 'VP of Engineering'
+            }
+        ];
+
+        // DOM elements
+        const createContactBtn = document.getElementById('create-contact-btn');
+        const contactForm = document.getElementById('contact-form');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const successNotification = document.getElementById('success-notification');
+        const duplicateModal = document.getElementById('duplicate-modal');
+
+        // Show form
+        createContactBtn.addEventListener('click', () => {
+            contactForm.classList.add('visible');
+            successNotification.classList.remove('visible');
+            contactForm.reset();
+            clearErrors();
+        });
+
+        // Hide form
+        cancelBtn.addEventListener('click', () => {
+            contactForm.classList.remove('visible');
+            contactForm.reset();
+            clearErrors();
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Clear previous errors
+            clearErrors();
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const firstname = formData.get('firstname');
+            const lastname = formData.get('lastname');
+            const email = formData.get('email');
+            const company = formData.get('company');
+            const jobtitle = formData.get('jobtitle');
+
+            // Validation
+            let hasErrors = false;
+
+            if (!firstname) {
+                showError('firstname');
+                hasErrors = true;
+            }
+
+            if (!lastname) {
+                showError('lastname');
+                hasErrors = true;
+            }
+
+            if (!email || !isValidEmail(email)) {
+                showError('email');
+                hasErrors = true;
+            }
+
+            if (hasErrors) {
+                return;
+            }
+
+            // Check for duplicates
+            const duplicate = existingContacts.find(c => c.email.toLowerCase() === email.toLowerCase());
+
+            if (duplicate) {
+                showDuplicateModal(duplicate);
+                return;
+            }
+
+            // Success - create contact
+            createContact(formData);
+        });
+
+        function showError(fieldName) {
+            const input = document.getElementById(fieldName);
+            const errorMsg = document.getElementById(`${fieldName}-error`);
+            input.classList.add('error');
+            errorMsg.classList.add('visible');
+        }
+
+        function clearErrors() {
+            const inputs = contactForm.querySelectorAll('input');
+            inputs.forEach(input => input.classList.remove('error'));
+            const errors = contactForm.querySelectorAll('.error-message');
+            errors.forEach(error => error.classList.remove('visible'));
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showDuplicateModal(contact) {
+            document.getElementById('duplicate-contact-name').textContent =
+                `${contact.firstname} ${contact.lastname}`;
+            document.getElementById('duplicate-contact-details').textContent =
+                `${contact.email} | ${contact.company} | ${contact.jobtitle}`;
+            duplicateModal.classList.add('visible');
+        }
+
+        function closeDuplicateModal() {
+            duplicateModal.classList.remove('visible');
+        }
+
+        // Duplicate modal actions
+        document.getElementById('view-existing-btn').addEventListener('click', () => {
+            closeDuplicateModal();
+            contactForm.classList.remove('visible');
+            alert('Viewing existing contact (mock behavior)');
+        });
+
+        document.getElementById('create-anyway-btn').addEventListener('click', () => {
+            closeDuplicateModal();
+            const formData = new FormData(contactForm);
+            createContact(formData);
+        });
+
+        document.getElementById('cancel-duplicate-btn').addEventListener('click', () => {
+            closeDuplicateModal();
+        });
+
+        function createContact(formData) {
+            // Add to existing contacts
+            existingContacts.push({
+                email: formData.get('email'),
+                firstname: formData.get('firstname'),
+                lastname: formData.get('lastname'),
+                company: formData.get('company'),
+                jobtitle: formData.get('jobtitle')
+            });
+
+            // Show success message
+            contactForm.classList.remove('visible');
+            successNotification.classList.add('visible');
+            contactForm.reset();
+
+            // Update contacts list
+            updateContactsList();
+        }
+
+        function updateContactsList() {
+            const contactsList = document.querySelector('.contacts-list');
+            contactsList.innerHTML = '<h2>Existing Contacts</h2>';
+
+            existingContacts.forEach(contact => {
+                const item = document.createElement('div');
+                item.className = 'contact-item';
+                item.innerHTML = `
+                    <div class="contact-name">${contact.firstname} ${contact.lastname}</div>
+                    <div class="contact-details">
+                        ${contact.email}${contact.company ? ' | ' + contact.company : ''}${contact.jobtitle ? ' | ' + contact.jobtitle : ''}
+                    </div>
+                `;
+                contactsList.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>

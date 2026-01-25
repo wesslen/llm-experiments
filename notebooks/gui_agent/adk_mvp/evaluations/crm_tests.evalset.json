@@ -1,0 +1,222 @@
+{
+  "eval_set_id": "crm_lead_entry_tests",
+  "name": "CRM Lead Entry - Enterprise Behavioral Tests",
+  "description": "Tests GUI agent's ability to automate CRM lead creation with form validation, duplicate detection, and error handling",
+  "test_cases": [
+    {
+      "test_id": "crm_happy_path",
+      "name": "Successfully create CRM lead with all fields",
+      "description": "Agent should navigate to mock CRM, fill form fields, and successfully create a lead",
+      "user_task": "Create a new lead in the CRM. Use these details: First Name: Sarah, Last Name: Martinez, Email: sarah.martinez@innovate.com, Company: Innovate Solutions, Phone: 415-555-0199, Job Title: Director of Product, Lead Status: New",
+      "expected_tool_trajectory": [
+        {
+          "tool": "init-browser",
+          "description": "Navigate to mock CRM URL"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Understand page structure and locate 'Create contact' button"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Click 'Create contact' button to open form",
+          "code_pattern": "click.*[Cc]reate.*contact"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Verify form opened and identify input fields"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill firstname field",
+          "code_pattern": "fill.*firstname.*Sarah"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill lastname field",
+          "code_pattern": "fill.*lastname.*Martinez"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill email field",
+          "code_pattern": "fill.*email.*sarah\\.martinez@innovate\\.com"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill company field",
+          "code_pattern": "fill.*company.*Innovate"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill phone field (optional)",
+          "optional": true
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill jobtitle field (optional)",
+          "optional": true
+        },
+        {
+          "tool": "execute-code",
+          "description": "Select lead status dropdown (optional)",
+          "optional": true
+        },
+        {
+          "tool": "execute-code",
+          "description": "Submit form",
+          "code_pattern": "(click.*submit|click.*[Ss]ave)"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Verify success message appears"
+        }
+      ],
+      "expected_response_contains": [
+        "successfully",
+        "created",
+        "Sarah",
+        "Martinez"
+      ],
+      "success_criteria": {
+        "tool_trajectory_match": 0.85,
+        "response_quality": 0.7,
+        "task_completion": true
+      }
+    },
+    {
+      "test_id": "crm_validation_error",
+      "name": "Handle form validation error - missing required field",
+      "description": "Agent should detect validation error when email is missing and communicate clearly to user",
+      "user_task": "Create a new lead: First Name: John, Last Name: Doe, Company: Acme Corp. Do not provide an email address.",
+      "expected_tool_trajectory": [
+        {
+          "tool": "init-browser",
+          "description": "Navigate to mock CRM URL"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Locate create button"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Click create contact button"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill firstname"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill lastname"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill company"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Attempt to submit form"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Detect validation error message"
+        },
+        {
+          "tool": "get-screenshot",
+          "description": "Capture validation error (optional)",
+          "optional": true
+        }
+      ],
+      "expected_error_detection": true,
+      "expected_response_contains": [
+        "email",
+        "required",
+        "validation",
+        "error"
+      ],
+      "expected_response_excludes": [
+        "successfully",
+        "created"
+      ],
+      "success_criteria": {
+        "error_detection": true,
+        "clear_communication": true,
+        "user_clarification_requested": true
+      },
+      "failure_modes_tested": [
+        "Form Validation Error Detection",
+        "Error Communication Clarity"
+      ]
+    },
+    {
+      "test_id": "crm_duplicate_modal",
+      "name": "Detect and communicate duplicate contact modal",
+      "description": "Agent should detect duplicate warning modal when creating contact with existing email",
+      "user_task": "Create a new lead with email sarah.johnson@techcorp.com (this email already exists in the system)",
+      "expected_tool_trajectory": [
+        {
+          "tool": "init-browser",
+          "description": "Navigate to CRM"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Locate create button"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Click create button"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill email with existing address"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Fill other fields"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Submit form"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Detect duplicate modal overlay"
+        },
+        {
+          "tool": "get-screenshot",
+          "description": "Capture modal for evidence (optional)",
+          "optional": true
+        }
+      ],
+      "expected_modal_detection": true,
+      "expected_response_contains": [
+        "duplicate",
+        "already exists",
+        "contact",
+        "Sarah Johnson"
+      ],
+      "expected_user_clarification": {
+        "options": [
+          "view existing",
+          "create anyway",
+          "cancel"
+        ]
+      },
+      "success_criteria": {
+        "modal_detection": true,
+        "user_presented_with_options": true,
+        "clear_explanation": true
+      },
+      "failure_modes_tested": [
+        "Modal Dialog Perception",
+        "User Clarification Communication"
+      ]
+    }
+  ],
+  "evaluation_config": {
+    "match_type": "IN_ORDER",
+    "allow_extra_tools": true,
+    "tool_trajectory_threshold": 0.85,
+    "response_match_threshold": 0.7
+  }
+}

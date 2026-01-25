@@ -5,6 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
+
+# additional files to ignore
+.DS_Store
 .adk
 
 # Distribution / packaging

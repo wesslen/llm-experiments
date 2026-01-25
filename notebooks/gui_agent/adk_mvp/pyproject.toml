@@ -22,3 +22,8 @@ asyncio_default_fixture_loop_scope = "function"
 testpaths = ["tests"]
 python_files = "test_*.py"
 python_functions = "test_*"
+markers = [
+    "enterprise: Enterprise behavioral tests (requires mock services, longer execution)",
+    "crm: CRM-specific behavioral tests",
+    "dashboard: Dashboard monitoring behavioral tests",
+]

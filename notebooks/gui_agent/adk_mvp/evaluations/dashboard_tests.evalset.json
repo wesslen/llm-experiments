@@ -1,0 +1,205 @@
+{
+  "eval_set_id": "dashboard_monitoring_tests",
+  "name": "Dashboard Monitoring - Enterprise Behavioral Tests",
+  "description": "Tests GUI agent's ability to extract metrics from dashboards, apply threshold logic, and handle dynamic content loading",
+  "test_cases": [
+    {
+      "test_id": "dashboard_happy_path",
+      "name": "Extract metrics and check thresholds",
+      "description": "Agent should navigate to dashboard, extract metric values, apply threshold logic, and report findings",
+      "user_task": "Check the production dashboard. Report the current CPU usage, memory usage, and error rate. Alert me if any metric exceeds 80%.",
+      "expected_tool_trajectory": [
+        {
+          "tool": "init-browser",
+          "description": "Navigate to mock dashboard URL"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Initial page structure assessment"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Wait for metrics to load (AJAX delay)",
+          "code_pattern": "waitFor",
+          "note": "Dashboard has 2-second AJAX loading delay"
+        },
+        {
+          "tool": "get-text-snapshot",
+          "description": "Extract metric values from page text",
+          "alternative": "get-interactive-snapshot"
+        },
+        {
+          "tool": "get-screenshot",
+          "description": "Visual confirmation of metrics (optional)",
+          "optional": true
+        }
+      ],
+      "expected_metric_extraction": {
+        "cpu_usage": 67.3,
+        "memory_usage": 58.9,
+        "error_rate": 2.4
+      },
+      "expected_threshold_logic": {
+        "threshold": 80,
+        "comparison": "less_than",
+        "alert_triggered": false
+      },
+      "expected_response_contains": [
+        "67.3",
+        "58.9",
+        "2.4",
+        "normal",
+        "below"
+      ],
+      "expected_response_excludes": [
+        "alert",
+        "warning",
+        "exceeds"
+      ],
+      "success_criteria": {
+        "data_extraction_accuracy": 1.0,
+        "threshold_logic_correct": true,
+        "all_metrics_reported": true
+      },
+      "failure_modes_tested": [
+        "Data Extraction Accuracy",
+        "Threshold Logic Errors",
+        "Wait Strategy Selection"
+      ]
+    },
+    {
+      "test_id": "dashboard_ajax_delay",
+      "name": "Handle AJAX loading delays with proper wait strategies",
+      "description": "Agent should wait for dynamic content to load before extracting data",
+      "user_task": "Get the request latency metric from the dashboard",
+      "expected_tool_trajectory": [
+        {
+          "tool": "init-browser",
+          "description": "Navigate to dashboard"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Assess page structure"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Wait for metric to finish loading",
+          "code_pattern": "(waitFor|wait.*[Ll]oading)",
+          "note": "Metrics show 'Loading...' initially, then values after 2s"
+        },
+        {
+          "tool": "get-text-snapshot",
+          "description": "Extract latency value after loading complete"
+        }
+      ],
+      "expected_wait_strategy": true,
+      "expected_metric_extraction": {
+        "request_latency": 245
+      },
+      "expected_response_contains": [
+        "245",
+        "ms",
+        "latency"
+      ],
+      "expected_response_excludes": [
+        "loading",
+        "not available"
+      ],
+      "success_criteria": {
+        "wait_strategy_used": true,
+        "loading_state_avoided": true,
+        "correct_value_extracted": true
+      },
+      "failure_modes_tested": [
+        "Dynamic Content Wait Failure",
+        "Wait Strategy Selection",
+        "Data Extraction Accuracy"
+      ]
+    },
+    {
+      "test_id": "dashboard_missing_metric",
+      "name": "Gracefully handle missing metrics",
+      "description": "Agent should detect when requested metric is not available and communicate clearly",
+      "user_task": "Report the database connection pool size from the dashboard",
+      "expected_tool_trajectory": [
+        {
+          "tool": "init-browser",
+          "description": "Navigate to dashboard"
+        },
+        {
+          "tool": "get-interactive-snapshot",
+          "description": "Search for metric"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Wait for page load",
+          "optional": true
+        },
+        {
+          "tool": "get-text-snapshot",
+          "description": "Comprehensive text search for metric"
+        },
+        {
+          "tool": "execute-code",
+          "description": "Search for metric variations",
+          "code_pattern": "locator.*database",
+          "optional": true
+        },
+        {
+          "tool": "get-screenshot",
+          "description": "Evidence of missing metric",
+          "optional": true
+        }
+      ],
+      "expected_missing_element_handling": true,
+      "expected_metrics_found": [
+        "CPU Usage",
+        "Memory Usage",
+        "Error Rate",
+        "Request Latency"
+      ],
+      "expected_metric_missing": "database connection pool",
+      "expected_response_contains": [
+        "could not find",
+        "not available",
+        "database connection pool"
+      ],
+      "expected_alternative_suggestions": {
+        "should_list_available_metrics": true,
+        "should_ask_user_for_clarification": true
+      },
+      "success_criteria": {
+        "missing_element_detected": true,
+        "clear_error_communication": true,
+        "alternative_metrics_suggested": true,
+        "no_hallucination": true
+      },
+      "failure_modes_tested": [
+        "Missing Element Graceful Failure",
+        "Error Communication Clarity",
+        "Data Extraction Accuracy"
+      ]
+    }
+  ],
+  "evaluation_config": {
+    "match_type": "IN_ORDER",
+    "allow_extra_tools": true,
+    "tool_trajectory_threshold": 0.85,
+    "response_match_threshold": 0.7,
+    "data_accuracy_threshold": 1.0
+  },
+  "notes": {
+    "mock_dashboard_behavior": "Dashboard simulates 2-second AJAX delay before showing metrics. Metrics initially display loading spinner, then actual values.",
+    "available_metrics": [
+      "CPU Usage: 67.3%",
+      "Memory Usage: 58.9%",
+      "Error Rate: 2.4%",
+      "Request Latency: 245ms"
+    ],
+    "missing_metrics": [
+      "Database connection pool size",
+      "Disk I/O",
+      "Network throughput"
+    ]
+  }
+}
